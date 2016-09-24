@@ -2,6 +2,9 @@
 
 Beware that this is unofficial documentation as API for this service is not public. It may be incomplete.
 
+Endpoint address:
+[api.futbol24.gluak.com](http://api.futbol24.gluak.com)
+
 https://api.futbol24.gluak.com/start
 https://api.futbol24.gluak.com/renew
 http://api.futbol24.gluak.com/competitions
@@ -41,20 +44,3 @@ http://api.futbol24.gluak.com/account/push/register/
 http://api.futbol24.gluak.com/account/push/register/GCM-
 http://api.futbol24.gluak.com/account/push/type/matches
 
-
-
-Address:
-http://api.futbol24.gluak.com/
-
-AUTH DETAILS:
-F24_APP_VERSION: 1.9.1
-XUSER_LANGUAGE: slk
-User-Agent: Futbol24 1.9.1/26 (innotek GmbH/VirtualBox; OS 23; 1024x720@160; slk)
-F24_DEVICE_ID: androidTab
-Accept-Encoding: gzip
-
-
-Minimalny request:
-curl --compressed --verbose -H "Accept-Encoding: gzip" --cookie "F24-CC=sk" http://api.futbol24.gluak.com/countries
-
-curl --compressed --verbose -A "Futbol24 1.9.1/26 (innotek GmbH/VirtualBox; OS 23; 1024x720@160; slk)" -H "Content-Type: application/json" -H "F24_APP_VERSION: 1.9.1" -H "XUSER_LANGUAGE: slk" -H "F24_DEVICE_ID: androidTab" -H "Connection: Keep-Alive" -H "Accept-Encoding: gzip" --cookie "F24-CC=sk" http://api.futbol24.gluak.com/countries
