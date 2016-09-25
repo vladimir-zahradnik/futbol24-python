@@ -8,7 +8,6 @@ except ImportError:
 
 
 class BaseModel(object):
-
     """ Base class from which all Futbol24 models will inherit. """
 
     def __init__(self, **kwargs):
@@ -78,7 +77,6 @@ class BaseModel(object):
 
 
 class Country(BaseModel):
-
     """A class representing the suggested user category structure. """
 
     def __init__(self, **kwargs):
@@ -97,7 +95,7 @@ class Country(BaseModel):
 
     def __repr__(self):
         return "Country(ID={country_id}, Name={name!r}, Short Name={short_name}, Teams={number_of_teams})".format(
-            country_id = self.id,
-            name = self.name,
-            short_name = self.sname,
-            number_of_teams = self.teams)
+            country_id=self.id,
+            name=self.name,
+            short_name=self.sname,
+            number_of_teams=self.teams)
