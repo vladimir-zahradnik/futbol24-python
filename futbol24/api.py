@@ -174,6 +174,8 @@ class Api(object):
         except:
             if "Error 403 Forbidden" in json_data:
                 raise Futbol24Error({'message': "Forbidden"})
+            if "404 Not Found" in json_data:
+                raise Futbol24Error({'message': "Not Found"})
 
         return data
 
