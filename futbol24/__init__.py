@@ -10,6 +10,7 @@ __url__          = 'https://github.com/vladimir-zahradnik/futbol24-python'
 __description__  = 'A Python wrapper around the Futbol24.com API'
 
 import json
+from .error import Futbol24Error
 
 from .models import (
     Country

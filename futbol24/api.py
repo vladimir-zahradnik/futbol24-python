@@ -5,8 +5,8 @@ from urllib.parse import urlparse, urlunparse, urlencode
 
 import requests
 
-from error import Futbol24Error
-from models import Country
+from futbol24 import Country
+from futbol24.error import Futbol24Error
 
 # A singleton representing a lazily instantiated FileCache.
 DEFAULT_CACHE = object()
