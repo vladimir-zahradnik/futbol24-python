@@ -5,7 +5,7 @@ from urllib.parse import urlparse, urlunparse, urlencode
 
 import requests
 
-from futbol24 import Country
+from futbol24 import Country, Team
 from futbol24.error import Futbol24Error
 
 # A singleton representing a lazily instantiated FileCache.
@@ -105,6 +105,22 @@ class Api(object):
         resp = self._request_url(url, 'GET', data=parameters)
         data = self._parse_and_check_json_data(resp.content.decode('utf-8'))
         return [Country.new_from_json_dict(x) for x in data.get('countries', '')['list']]
+
+    def get_teams(self, country_id):
+        try:
+            if int(country_id) <= 0:
+                raise Futbol24Error({'message': "'country_id' must be a positive number"})
+        except ValueError:
+            raise Futbol24Error({'message': "'country_id' must be an integer"})
+
+        # Build request parameters
+        parameters = {}
+
+        url = '{0}/country/{1}/teams'.format(self.base_url, country_id)
+
+        resp = self._request_url(url, 'GET', data=parameters)
+        data = self._parse_and_check_json_data(resp.content.decode('utf-8'))
+        return [Team.new_from_json_dict(x) for x in data.get('teams', '')['list']]
 
     def _request_url(self, url, method, data=None, json=None):
         """Request a url.

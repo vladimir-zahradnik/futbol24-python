@@ -77,9 +77,10 @@ class BaseModel(object):
 
 
 class Country(BaseModel):
-    """A class representing the suggested user category structure. """
+    """ A class representing country structure. """
 
     def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.param_defaults = {
             'id': None,
             'name': None,
@@ -99,3 +100,23 @@ class Country(BaseModel):
             name=self.name,
             short_name=self.sname,
             number_of_teams=self.teams)
+
+class Team(BaseModel):
+    """ A class representing team structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'id': None,
+            'country_id': None,
+            'name': None,
+            'update': None
+        }
+
+        for (param, default) in self.param_defaults.items():
+            setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self):
+        return "Team(ID={team_id}, Name={name!r})".format(
+            team_id=self.id,
+            name=self.name)

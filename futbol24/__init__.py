@@ -13,7 +13,8 @@ import json
 from .error import Futbol24Error
 
 from .models import (
-    Country
+    Country,
+    Team
 )
 
 from .api import Api
