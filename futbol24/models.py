@@ -114,7 +114,13 @@ class Team(BaseModel):
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            if param == 'country_id':
+                country = kwargs.get('country')
+                if country:
+                    id = country['id']
+                    setattr(self, param, id)
+            else:
+                setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self):
         return "Team(ID={team_id}, Name={name!r})".format(

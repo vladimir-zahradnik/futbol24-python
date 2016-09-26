@@ -108,7 +108,7 @@ class Api(object):
 
     def get_teams(self, country_id):
         try:
-            if int(country_id) <= 0:
+            if int(country_id) < 0:
                 raise Futbol24Error({'message': "'country_id' must be a positive number"})
         except ValueError:
             raise Futbol24Error({'message': "'country_id' must be an integer"})
