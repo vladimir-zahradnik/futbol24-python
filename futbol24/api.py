@@ -93,17 +93,17 @@ class Api(object):
         """
         self._request_headers['User-Agent'] = user_agent
 
-    def get_countries(self, filter_by_tables=False):
+    def get_countries(self, get_only_entries_with_tables_attr=False):
         # Build request parameters
         parameters = {}
 
-        if filter_by_tables:
+        if get_only_entries_with_tables_attr:
             parameters['filter'] = 'tables'
 
         url = '%s/countries' % self.base_url
 
         resp = self._request_url(url, 'GET', data=parameters)
-        data = self._parse_and_check_json_data(resp.content.decode('utf-8'))
+        data = self._parse_and_check_http_response(resp)
         return [Country.new_from_json_dict(x) for x in data.get('countries', '')['list']]
 
     def get_teams(self, country_id):
@@ -119,7 +119,7 @@ class Api(object):
         url = '{0}/country/{1}/teams'.format(self.base_url, country_id)
 
         resp = self._request_url(url, 'GET', data=parameters)
-        data = self._parse_and_check_json_data(resp.content.decode('utf-8'))
+        data = self._parse_and_check_http_response(resp)
         return [Team.new_from_json_dict(x) for x in data.get('teams', '')['list']]
 
     def _request_url(self, url, method, data=None, json=None):
@@ -179,19 +179,19 @@ class Api(object):
         # Return the rebuilt URL
         return urlunparse((scheme, netloc, path, params, query, fragment))
 
-    def _parse_and_check_json_data(self, json_data):
-        """Try and parse the JSON returned from Futbol24 and return
+    def _parse_and_check_http_response(self, response):
+        """ Check http response returned from Futbol24, try to parse it as JSON and return
         an empty dictionary if there is any error.
         """
-        data = None
+        if not response.ok:
+            raise Futbol24Error({'message': "Error {0} {1}".format(response.status_code, response.reason)})
+
+        json_data = response.content.decode('utf-8')
         try:
             data = json.loads(json_data)
 
         except:
-            if "Error 403 Forbidden" in json_data:
-                raise Futbol24Error({'message': "Forbidden"})
-            if "404 Not Found" in json_data:
-                raise Futbol24Error({'message': "Not Found"})
+            raise Futbol24Error({'message': "Invalid JSON content"})
 
         return data
 

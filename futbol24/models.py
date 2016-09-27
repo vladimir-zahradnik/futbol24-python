@@ -83,11 +83,12 @@ class Country(BaseModel):
         super().__init__(**kwargs)
         self.param_defaults = {
             'id': None,
-            'name': None,
-            'order': None,
-            'sname': None,
-            'teams': None,
             'type': None,
+            'name': None,
+            'sname': None,
+            'order': None,
+            'tables': None,
+            'teams': None,
             'update': None
         }
 
