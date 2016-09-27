@@ -1,1 +1,1847 @@
-{"countries":{"list":[{"id":39,"type":0,"name":"Belgium","sname":"BEL","order":0,"tables":18,"teams":212,"update":1473806067}]},"teams":{"list":[{"id":79,"country":{"id":39},"flag":1450888538,"name":"KAA Gent","update":1474875001},{"id":80,"country":{"id":39},"flag":1450888538,"name":"Anderlecht","update":1474875001},{"id":81,"country":{"id":39},"flag":0,"name":"Beveren","update":1474875001},{"id":82,"country":{"id":39},"flag":1450888538,"name":"Cercle Brugge","update":1474875001},{"id":83,"country":{"id":39},"flag":1450888539,"name":"Charleroi","update":1474875001},{"id":84,"country":{"id":39},"flag":1450888539,"name":"Club Brugge","update":1474875001},{"id":85,"country":{"id":39},"name":"Mouscron","update":1474875001},{"id":86,"country":{"id":39},"flag":0,"name":"FC Brussels","update":1474875001},{"id":87,"country":{"id":39},"flag":0,"name":"Beerschot AC","update":1474875001},{"id":88,"country":{"id":39},"flag":0,"name":"La Louviere","update":1474875001},{"id":89,"country":{"id":39},"flag":1450888539,"name":"Lierse","update":1474875001},{"id":90,"country":{"id":39},"flag":1450888539,"name":"Lokeren","update":1474875001},{"id":92,"country":{"id":39},"flag":1450888539,"name":"Sint-Truiden","update":1474875001},{"id":93,"country":{"id":39},"flag":1450888539,"name":"Standard Liege","update":1474875001},{"id":94,"country":{"id":39},"flag":1450888539,"name":"Westerlo","update":1474875001},{"id":95,"country":{"id":39},"flag":1450888540,"name":"Roeselare","update":1474875001},{"id":96,"country":{"id":39},"flag":1450888540,"name":"Zulte Waregem","update":1474875001},{"id":97,"country":{"id":39},"flag":0,"name":"Mons","update":1474875001},{"id":98,"country":{"id":39},"flag":1450888540,"name":"Oostende","update":1474875001},{"id":99,"country":{"id":39},"flag":1471732168,"name":"Antwerp","update":1474875001},{"id":100,"country":{"id":39},"flag":1450888523,"name":"Tubize","update":1474875001},{"id":102,"country":{"id":39},"flag":1450888523,"name":"Deinze","update":1474875001},{"id":103,"country":{"id":39},"flag":1450888523,"name":"Dessel","update":1474875001},{"id":104,"country":{"id":39},"flag":1342907750,"name":"KFCV Geel","update":1474875001},{"id":105,"country":{"id":39},"flag":1450888523,"name":"Hamme","update":1474875001},{"id":106,"country":{"id":39},"flag":1450888524,"name":"Eupen","update":1474875001},{"id":107,"country":{"id":39},"flag":1342907752,"name":"Ronse","update":1474875001},{"id":108,"country":{"id":39},"flag":1450888524,"name":"Waasland-Bev.","update":1474875001},{"id":109,"country":{"id":39},"flag":1450888524,"name":"Kortrijk","update":1474875001},{"id":110,"country":{"id":39},"flag":1450888524,"name":"KV Mechelen","update":1474875001},{"id":111,"country":{"id":39},"flag":1450888524,"name":"Union SG","update":1474875001},{"id":112,"country":{"id":39},"flag":1450888524,"name":"OH Leuven","update":1474875001},{"id":113,"country":{"id":39},"flag":1450888524,"name":"Lommel Utd","update":1474875001},{"id":115,"country":{"id":39},"flag":1450888524,"name":"Aalst","update":1474875001},{"id":116,"country":{"id":39},"flag":1342907759,"name":"Turnhout","update":1474875001},{"id":117,"country":{"id":39},"flag":1450888525,"name":"Sint-Niklaas","update":1474875001},{"id":118,"country":{"id":39},"flag":1450888525,"name":"Cappellen","update":1474875001},{"id":119,"country":{"id":39},"flag":1450888525,"name":"Torhout","update":1474875001},{"id":120,"country":{"id":39},"flag":0,"name":"Wetteren","update":1474875001},{"id":121,"country":{"id":39},"flag":1450888525,"name":"Rac Mechelen","update":1474875001},{"id":123,"country":{"id":39},"flag":1450888525,"name":"Bornem","update":1474875001},{"id":124,"country":{"id":39},"flag":1450888525,"name":"Diegem","update":1474875001},{"id":125,"country":{"id":39},"flag":1450888525,"name":"WS Bruxelles","update":1474875001},{"id":126,"country":{"id":39},"flag":1342907768,"name":"RC Waregem","update":1474875001},{"id":127,"country":{"id":39},"flag":1450888526,"name":"Dender","update":1474875001},{"id":128,"country":{"id":39},"flag":1342907769,"name":"SW Harelbeke","update":1474875001},{"id":129,"country":{"id":39},"flag":1450888526,"name":"Rupel Boom","update":1474875001},{"id":131,"country":{"id":39},"flag":1450888526,"name":"Tienen","update":1474875001},{"id":132,"country":{"id":39},"flag":1450888526,"name":"Bocholt","update":1474875001},{"id":133,"country":{"id":39},"flag":1450888526,"name":"Wall. Walhain","update":1474875001},{"id":134,"country":{"id":39},"flag":1342907774,"name":"UR Namur","update":1474875001},{"id":136,"country":{"id":39},"flag":1342907775,"name":"Tongeren","update":1474875001},{"id":137,"country":{"id":39},"flag":0,"name":"Boussu D.Bor.","update":1474875001},{"id":138,"country":{"id":39},"flag":1450888527,"name":"Sprimont","update":1474875001},{"id":140,"country":{"id":39},"name":"Mol-Wezel","update":1474875001},{"id":141,"country":{"id":39},"flag":1450888527,"name":"Hasselt","update":1474875001},{"id":142,"country":{"id":39},"flag":0,"name":"Verviers","update":1474875001},{"id":145,"country":{"id":39},"flag":1342907782,"name":"RC CCF","update":1474875001},{"id":1866,"country":{"id":39},"flag":1450888529,"name":"Racing Genk","update":1474875001},{"id":1933,"country":{"id":39},"flag":1450888529,"name":"Virton","update":1474875001},{"id":2093,"country":{"id":39},"flag":1342909806,"name":"Zwarte Leeuw","update":1474875001},{"id":3397,"country":{"id":39},"flag":1450888532,"name":"La Louviere C.","update":1474875001},{"id":4505,"country":{"id":39},"flag":1342912900,"name":"Tournai","update":1474875001},{"id":4506,"country":{"id":39},"flag":1342912901,"name":"Charleroi-Mar.","update":1474875001},{"id":4576,"country":{"id":39},"flag":1450888534,"name":"ASV Geel","update":1474875001},{"id":4577,"country":{"id":39},"flag":0,"name":"Lyra TSV","update":1474875001},{"id":4785,"country":{"id":39},"flag":0,"name":"S. Truiden (W)","update":1474875001},{"id":5711,"country":{"id":39},"flag":1450888536,"name":"RFC Liege","update":1474875001},{"id":5975,"country":{"id":39},"flag":1342945198,"name":"Seraing","update":1474875001},{"id":5976,"country":{"id":39},"name":"Veldwezelt","update":1474875001},{"id":6124,"country":{"id":39},"flag":1342945300,"name":"Eva Tienen (W)","update":1474875001},{"id":6872,"country":{"id":39},"name":"Peruwelz","update":1474875001},{"id":6873,"country":{"id":39},"name":"KSV Sottegem","update":1474875001},{"id":6874,"country":{"id":39},"flag":1450888537,"name":"Oudenaarde","update":1474875001},{"id":6876,"country":{"id":39},"flag":1450888537,"name":"Gent-Zeehaven","update":1474875001},{"id":6877,"country":{"id":39},"flag":1450888537,"name":"WoluweZaventem","update":1474875001},{"id":6878,"country":{"id":39},"flag":0,"name":"Vise","update":1474875001},{"id":6879,"country":{"id":39},"flag":1342946010,"name":"Hamoir","update":1474875001},{"id":6880,"country":{"id":39},"flag":1450888537,"name":"La Calamine","update":1474875001},{"id":6881,"country":{"id":39},"flag":1450888537,"name":"Hoogstraten","update":1474875001},{"id":7643,"country":{"id":39},"flag":1450888538,"name":"Anderlecht Yth","update":1474875001},{"id":7863,"country":{"id":39},"flag":1450888538,"name":"Standard (W)","update":1474875001},{"id":8051,"country":{"id":39},"flag":1450888538,"name":"Patro Eisden","update":1474875001},{"id":8148,"country":{"id":39},"flag":1450888538,"name":"Heist","update":1474875001},{"id":8149,"country":{"id":39},"flag":1450888538,"name":"Coxyde","update":1474875001},{"id":8150,"country":{"id":39},"name":"Ieper","update":1474875001},{"id":8151,"country":{"id":39},"flag":1450888538,"name":"Temse","update":1474875001},{"id":8152,"country":{"id":39},"name":"Ternat","update":1474875001},{"id":8153,"country":{"id":39},"flag":0,"name":"FC Bleid","update":1474875001},{"id":8669,"country":{"id":39},"flag":1450888539,"name":"Gullegem","update":1474875001},{"id":8671,"country":{"id":39},"name":"Wavre","update":1474875001},{"id":8673,"country":{"id":39},"flag":1450888539,"name":"Berchem","update":1474875001},{"id":8680,"country":{"id":39},"flag":1450888539,"name":"Londerzeel","update":1474875001},{"id":8721,"country":{"id":39},"flag":0,"name":"Huy","update":1474875001},{"id":8722,"country":{"id":39},"flag":0,"name":"RE Bertrigeoise","update":1474875001},{"id":8723,"country":{"id":39},"flag":1450888539,"name":"Spouwen-Moper.","update":1474875001},{"id":8726,"country":{"id":39},"flag":1342947603,"name":"KFC Lille","update":1474875001},{"id":8727,"country":{"id":39},"flag":0,"name":"Katelijne-Wav.","update":1474875001},{"id":10935,"country":{"id":39},"flag":1342950084,"name":"Duffel","update":1474875001},{"id":11049,"country":{"id":39},"name":"Sint-Truid (W)","update":1474875001},{"id":11070,"country":{"id":39},"flag":1450888524,"name":"Izegem","update":1474875001},{"id":11071,"country":{"id":39},"flag":1450888524,"name":"Olsa Brakel","update":1474875001},{"id":11072,"country":{"id":39},"flag":1450888524,"name":"Grimbergen","update":1474875001},{"id":11073,"country":{"id":39},"flag":0,"name":"RJSHLF","update":1474875001},{"id":11327,"country":{"id":39},"flag":1450888524,"name":"Anderlecht (W)","update":1474875001},{"id":11328,"country":{"id":39},"flag":1450888524,"name":"OH Leuven (W)","update":1474875001},{"id":11330,"country":{"id":39},"flag":0,"name":"Brugge (W)","update":1474875001},{"id":11331,"country":{"id":39},"flag":0,"name":"Z. Waregem (W)","update":1474875001},{"id":11332,"country":{"id":39},"flag":1450888524,"name":"Lierse (W)","update":1474875001},{"id":11712,"country":{"id":39},"flag":1342950687,"name":"Sparta Petegem","update":1474875001},{"id":11713,"country":{"id":39},"name":"Lutlommel","update":1474875001},{"id":12112,"country":{"id":39},"flag":1342908431,"name":"C. Brugge Yth","update":1474875001},{"id":12538,"country":{"id":39},"flag":1342951314,"name":"R. Knokke","update":1474875001},{"id":12569,"country":{"id":39},"flag":1342951339,"name":"KSC Menen","update":1474875001},{"id":12610,"country":{"id":39},"flag":1342951368,"name":"Geants Athois","update":1474875001},{"id":12611,"country":{"id":39},"flag":1450888526,"name":"Mouscron-Per.","update":1474875001},{"id":12612,"country":{"id":39},"flag":1342951370,"name":"Olym. Wijgmaal","update":1474875001},{"id":12738,"country":{"id":39},"flag":0,"name":"Beerschot (W)","update":1474875001},{"id":12739,"country":{"id":39},"flag":1342947111,"name":"Heist (W)","update":1474875001},{"id":12740,"country":{"id":39},"name":"Achterbroek(W)","update":1474875001},{"id":13909,"country":{"id":39},"name":"Rapid Leest","update":1474875001},{"id":13911,"country":{"id":39},"name":"Oostnieuwkerke","update":1474875001},{"id":13918,"country":{"id":39},"name":"Herk FC","update":1474875001},{"id":13919,"country":{"id":39},"name":"Eernegem","update":1474875001},{"id":13920,"country":{"id":39},"name":"SVV Damme","update":1474875001},{"id":13921,"country":{"id":39},"name":"Kampenhout","update":1474875001},{"id":13974,"country":{"id":39},"name":"Termien","update":1474875001},{"id":13976,"country":{"id":39},"name":"Rijmenam","update":1474875001},{"id":13986,"country":{"id":39},"name":"KWS Oudenburg","update":1474875001},{"id":13995,"country":{"id":39},"name":"Svelta Melsele","update":1474875001},{"id":14170,"country":{"id":39},"name":"RUW Ciney","update":1474875001},{"id":14368,"country":{"id":39},"name":"SV Voorde","update":1474875001},{"id":14369,"country":{"id":39},"name":"FC Pepingen","update":1474875001},{"id":15549,"country":{"id":39},"name":"KJV Kruibeke","update":1474875001},{"id":15550,"country":{"id":39},"name":"KE Wervik","update":1474875001},{"id":15551,"country":{"id":39},"name":"R. Chatelet","update":1474875001},{"id":15552,"country":{"id":39},"name":"KGR Katelijne","update":1474875001},{"id":15560,"country":{"id":39},"name":"Malmundaria","update":1474875001},{"id":15561,"country":{"id":39},"name":"Verbr. Balen","update":1474875001},{"id":15562,"country":{"id":39},"name":"Eendracht Zele","update":1474875001},{"id":15564,"country":{"id":39},"name":"Zandhoven SK","update":1474875001},{"id":15578,"country":{"id":39},"name":"KVV Zelzate","update":1474875001},{"id":15616,"country":{"id":39},"name":"KSK Bree","update":1474875001},{"id":15704,"country":{"id":39},"name":"W. Koersel","update":1474875001},{"id":15718,"country":{"id":39},"name":"KFCO","update":1474875001},{"id":15735,"country":{"id":39},"name":"RJE Binchoise","update":1474875001},{"id":15813,"country":{"id":39},"flag":1450888528,"name":"AA Gent (W)","update":1474875001},{"id":15814,"country":{"id":39},"flag":0,"name":"Antwerp (W)","update":1474875001},{"id":15819,"country":{"id":39},"name":"Stade Bierbeek","update":1474875001},{"id":15966,"country":{"id":39},"name":"Everbeur","update":1474875001},{"id":16202,"country":{"id":39},"name":"Tempo Overijse","update":1474875001},{"id":16203,"country":{"id":39},"name":"VK Westhoek","update":1474875001},{"id":16204,"country":{"id":39},"name":"Wolvertem SC","update":1474875001},{"id":17104,"country":{"id":39},"name":"Genly-Quevy","update":1474875001},{"id":17108,"country":{"id":39},"name":"Witgoor Sport","update":1474875001},{"id":17165,"country":{"id":39},"name":"KFC Houtvenne","update":1474875001},{"id":17186,"country":{"id":39},"name":"S-E-Winkel Sp.","update":1474875001},{"id":17431,"country":{"id":39},"name":"SintGillisWaas","update":1474875001},{"id":17432,"country":{"id":39},"name":"RRC Waterloo","update":1474875001},{"id":17433,"country":{"id":39},"name":"Beers. Wilrijk","update":1474875001},{"id":17434,"country":{"id":39},"name":"RJS Tamines","update":1474875001},{"id":17842,"country":{"id":39},"flag":1450888529,"name":"Anderlecht U21","update":1474875001},{"id":17843,"country":{"id":39},"flag":1450888529,"name":"Lokeren U21","update":1474875001},{"id":17844,"country":{"id":39},"flag":1450888529,"name":"Kortrijk U21","update":1474875001},{"id":17845,"country":{"id":39},"flag":1450888529,"name":"KV MechelenU21","update":1474875001},{"id":17846,"country":{"id":39},"flag":1450888529,"name":"Cl. Brugge U21","update":1474875001},{"id":17847,"country":{"id":39},"flag":0,"name":"Cercle Br. U21","update":1474875001},{"id":17848,"country":{"id":39},"flag":1342908485,"name":"Lierse U21","update":1474875001},{"id":17849,"country":{"id":39},"flag":1450888529,"name":"KAA Gent U21","update":1474875001},{"id":17850,"country":{"id":39},"flag":1450888529,"name":"Oostende U21","update":1474875001},{"id":17851,"country":{"id":39},"flag":1450888529,"name":"Mouscron-P U21","update":1474875001},{"id":17852,"country":{"id":39},"flag":1450888529,"name":"Rac. Genk U21","update":1474875001},{"id":17853,"country":{"id":39},"flag":1450888529,"name":"Waasl-Bev. U21","update":1474875001},{"id":17854,"country":{"id":39},"flag":1450888529,"name":"Charleroi U21","update":1474875001},{"id":17855,"country":{"id":39},"flag":1450888529,"name":"Standard L U21","update":1474875001},{"id":17856,"country":{"id":39},"flag":1450888529,"name":"Westerlo U21","update":1474875001},{"id":17857,"country":{"id":39},"flag":1450888529,"name":"Zulte War. U21","update":1474875001},{"id":18265,"country":{"id":39},"name":"KVK Wellen","update":1474875001},{"id":18278,"country":{"id":39},"name":"RUS Binchoise","update":1474875001},{"id":18279,"country":{"id":39},"name":"Ingelmunster","update":1474875001},{"id":18280,"country":{"id":39},"name":"Spo Kortenberg","update":1474875001},{"id":18281,"country":{"id":39},"name":"KFC Merelbeke","update":1474875001},{"id":18282,"country":{"id":39},"name":"Rochus Deurne","update":1474875001},{"id":18283,"country":{"id":39},"name":"KSK Koekelare","update":1474875001},{"id":18284,"country":{"id":39},"name":"RC Amay","update":1474875001},{"id":18285,"country":{"id":39},"name":"EendrachtHenis","update":1474875001},{"id":18286,"country":{"id":39},"name":"KFC Antonia","update":1474875001},{"id":18287,"country":{"id":39},"name":"Club Roeselare","update":1474875001},{"id":18288,"country":{"id":39},"name":"KAC Betekom","update":1474875001},{"id":18289,"country":{"id":39},"name":"Esperanza Pelt","update":1474875001},{"id":18290,"country":{"id":39},"name":"Bil Waltwilder","update":1474875001},{"id":18291,"country":{"id":39},"name":"RCS Verlaine","update":1474875001},{"id":18317,"country":{"id":39},"name":"RFC Tilleur","update":1474875001},{"id":18554,"country":{"id":39},"flag":1450888529,"name":"St-Truiden U21","update":1474875001},{"id":18555,"country":{"id":39},"flag":1450888529,"name":"OH Leuven U21","update":1474875001},{"id":18568,"country":{"id":39},"name":"Sint-Lenaarts","update":1474875001},{"id":18601,"country":{"id":39},"name":"RES Acrenoise","update":1474875001},{"id":18692,"country":{"id":39},"name":"Genk (W)","update":1474875001},{"id":18760,"country":{"id":39},"name":"SK Berlare","update":1474875001},{"id":18761,"country":{"id":39},"name":"RC Charleroi","update":1474875001},{"id":18762,"country":{"id":39},"name":"RC Hades","update":1474875001},{"id":18869,"country":{"id":39},"flag":1342908379,"name":"KAA Gent Youth","update":1474875001},{"id":19043,"country":{"id":39},"name":"Sterrebeek","update":1474875001},{"id":19045,"country":{"id":39},"name":"Eendracht V.","update":1474875001},{"id":19404,"country":{"id":39},"name":"Avanti Stekene","update":1474875001},{"id":19418,"country":{"id":39},"name":"SW Harelbeke","update":1474875001},{"id":19505,"country":{"id":39},"name":"RA Quevy-Mons","update":1474875001},{"id":19566,"country":{"id":39},"flag":1342907751,"name":"Eupen U21","update":1474875001},{"id":19687,"country":{"id":39},"name":"RFC Meux","update":1474875001},{"id":19688,"country":{"id":39},"name":"Rebecq","update":1474875001},{"id":19689,"country":{"id":39},"name":"Waremme","update":1474875001},{"id":19690,"country":{"id":39},"name":"Helson Helcht.","update":1474875001}]}}
+{
+  "countries": {
+    "list": [
+      {
+        "id": 39,
+        "type": 0,
+        "name": "Belgium",
+        "sname": "BEL",
+        "order": 0,
+        "tables": 18,
+        "teams": 212,
+        "update": 1473806067
+      }
+    ]
+  },
+  "teams": {
+    "list": [
+      {
+        "id": 79,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "KAA Gent",
+        "update": 1474875001
+      },
+      {
+        "id": 80,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "Anderlecht",
+        "update": 1474875001
+      },
+      {
+        "id": 81,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Beveren",
+        "update": 1474875001
+      },
+      {
+        "id": 82,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "Cercle Brugge",
+        "update": 1474875001
+      },
+      {
+        "id": 83,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Charleroi",
+        "update": 1474875001
+      },
+      {
+        "id": 84,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Club Brugge",
+        "update": 1474875001
+      },
+      {
+        "id": 85,
+        "country": {
+          "id": 39
+        },
+        "name": "Mouscron",
+        "update": 1474875001
+      },
+      {
+        "id": 86,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "FC Brussels",
+        "update": 1474875001
+      },
+      {
+        "id": 87,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Beerschot AC",
+        "update": 1474875001
+      },
+      {
+        "id": 88,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "La Louviere",
+        "update": 1474875001
+      },
+      {
+        "id": 89,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Lierse",
+        "update": 1474875001
+      },
+      {
+        "id": 90,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Lokeren",
+        "update": 1474875001
+      },
+      {
+        "id": 92,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Sint-Truiden",
+        "update": 1474875001
+      },
+      {
+        "id": 93,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Standard Liege",
+        "update": 1474875001
+      },
+      {
+        "id": 94,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Westerlo",
+        "update": 1474875001
+      },
+      {
+        "id": 95,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888540,
+        "name": "Roeselare",
+        "update": 1474875001
+      },
+      {
+        "id": 96,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888540,
+        "name": "Zulte Waregem",
+        "update": 1474875001
+      },
+      {
+        "id": 97,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Mons",
+        "update": 1474875001
+      },
+      {
+        "id": 98,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888540,
+        "name": "Oostende",
+        "update": 1474875001
+      },
+      {
+        "id": 99,
+        "country": {
+          "id": 39
+        },
+        "flag": 1471732168,
+        "name": "Antwerp",
+        "update": 1474875001
+      },
+      {
+        "id": 100,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888523,
+        "name": "Tubize",
+        "update": 1474875001
+      },
+      {
+        "id": 102,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888523,
+        "name": "Deinze",
+        "update": 1474875001
+      },
+      {
+        "id": 103,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888523,
+        "name": "Dessel",
+        "update": 1474875001
+      },
+      {
+        "id": 104,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907750,
+        "name": "KFCV Geel",
+        "update": 1474875001
+      },
+      {
+        "id": 105,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888523,
+        "name": "Hamme",
+        "update": 1474875001
+      },
+      {
+        "id": 106,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Eupen",
+        "update": 1474875001
+      },
+      {
+        "id": 107,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907752,
+        "name": "Ronse",
+        "update": 1474875001
+      },
+      {
+        "id": 108,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Waasland-Bev.",
+        "update": 1474875001
+      },
+      {
+        "id": 109,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Kortrijk",
+        "update": 1474875001
+      },
+      {
+        "id": 110,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "KV Mechelen",
+        "update": 1474875001
+      },
+      {
+        "id": 111,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Union SG",
+        "update": 1474875001
+      },
+      {
+        "id": 112,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "OH Leuven",
+        "update": 1474875001
+      },
+      {
+        "id": 113,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Lommel Utd",
+        "update": 1474875001
+      },
+      {
+        "id": 115,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Aalst",
+        "update": 1474875001
+      },
+      {
+        "id": 116,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907759,
+        "name": "Turnhout",
+        "update": 1474875001
+      },
+      {
+        "id": 117,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888525,
+        "name": "Sint-Niklaas",
+        "update": 1474875001
+      },
+      {
+        "id": 118,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888525,
+        "name": "Cappellen",
+        "update": 1474875001
+      },
+      {
+        "id": 119,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888525,
+        "name": "Torhout",
+        "update": 1474875001
+      },
+      {
+        "id": 120,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Wetteren",
+        "update": 1474875001
+      },
+      {
+        "id": 121,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888525,
+        "name": "Rac Mechelen",
+        "update": 1474875001
+      },
+      {
+        "id": 123,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888525,
+        "name": "Bornem",
+        "update": 1474875001
+      },
+      {
+        "id": 124,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888525,
+        "name": "Diegem",
+        "update": 1474875001
+      },
+      {
+        "id": 125,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888525,
+        "name": "WS Bruxelles",
+        "update": 1474875001
+      },
+      {
+        "id": 126,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907768,
+        "name": "RC Waregem",
+        "update": 1474875001
+      },
+      {
+        "id": 127,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888526,
+        "name": "Dender",
+        "update": 1474875001
+      },
+      {
+        "id": 128,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907769,
+        "name": "SW Harelbeke",
+        "update": 1474875001
+      },
+      {
+        "id": 129,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888526,
+        "name": "Rupel Boom",
+        "update": 1474875001
+      },
+      {
+        "id": 131,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888526,
+        "name": "Tienen",
+        "update": 1474875001
+      },
+      {
+        "id": 132,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888526,
+        "name": "Bocholt",
+        "update": 1474875001
+      },
+      {
+        "id": 133,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888526,
+        "name": "Wall. Walhain",
+        "update": 1474875001
+      },
+      {
+        "id": 134,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907774,
+        "name": "UR Namur",
+        "update": 1474875001
+      },
+      {
+        "id": 136,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907775,
+        "name": "Tongeren",
+        "update": 1474875001
+      },
+      {
+        "id": 137,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Boussu D.Bor.",
+        "update": 1474875001
+      },
+      {
+        "id": 138,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888527,
+        "name": "Sprimont",
+        "update": 1474875001
+      },
+      {
+        "id": 140,
+        "country": {
+          "id": 39
+        },
+        "name": "Mol-Wezel",
+        "update": 1474875001
+      },
+      {
+        "id": 141,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888527,
+        "name": "Hasselt",
+        "update": 1474875001
+      },
+      {
+        "id": 142,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Verviers",
+        "update": 1474875001
+      },
+      {
+        "id": 145,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907782,
+        "name": "RC CCF",
+        "update": 1474875001
+      },
+      {
+        "id": 1866,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Racing Genk",
+        "update": 1474875001
+      },
+      {
+        "id": 1933,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Virton",
+        "update": 1474875001
+      },
+      {
+        "id": 2093,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342909806,
+        "name": "Zwarte Leeuw",
+        "update": 1474875001
+      },
+      {
+        "id": 3397,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888532,
+        "name": "La Louviere C.",
+        "update": 1474875001
+      },
+      {
+        "id": 4505,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342912900,
+        "name": "Tournai",
+        "update": 1474875001
+      },
+      {
+        "id": 4506,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342912901,
+        "name": "Charleroi-Mar.",
+        "update": 1474875001
+      },
+      {
+        "id": 4576,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888534,
+        "name": "ASV Geel",
+        "update": 1474875001
+      },
+      {
+        "id": 4577,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Lyra TSV",
+        "update": 1474875001
+      },
+      {
+        "id": 4785,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "S. Truiden (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 5711,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888536,
+        "name": "RFC Liege",
+        "update": 1474875001
+      },
+      {
+        "id": 5975,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342945198,
+        "name": "Seraing",
+        "update": 1474875001
+      },
+      {
+        "id": 5976,
+        "country": {
+          "id": 39
+        },
+        "name": "Veldwezelt",
+        "update": 1474875001
+      },
+      {
+        "id": 6124,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342945300,
+        "name": "Eva Tienen (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 6872,
+        "country": {
+          "id": 39
+        },
+        "name": "Peruwelz",
+        "update": 1474875001
+      },
+      {
+        "id": 6873,
+        "country": {
+          "id": 39
+        },
+        "name": "KSV Sottegem",
+        "update": 1474875001
+      },
+      {
+        "id": 6874,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888537,
+        "name": "Oudenaarde",
+        "update": 1474875001
+      },
+      {
+        "id": 6876,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888537,
+        "name": "Gent-Zeehaven",
+        "update": 1474875001
+      },
+      {
+        "id": 6877,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888537,
+        "name": "WoluweZaventem",
+        "update": 1474875001
+      },
+      {
+        "id": 6878,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Vise",
+        "update": 1474875001
+      },
+      {
+        "id": 6879,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342946010,
+        "name": "Hamoir",
+        "update": 1474875001
+      },
+      {
+        "id": 6880,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888537,
+        "name": "La Calamine",
+        "update": 1474875001
+      },
+      {
+        "id": 6881,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888537,
+        "name": "Hoogstraten",
+        "update": 1474875001
+      },
+      {
+        "id": 7643,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "Anderlecht Yth",
+        "update": 1474875001
+      },
+      {
+        "id": 7863,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "Standard (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 8051,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "Patro Eisden",
+        "update": 1474875001
+      },
+      {
+        "id": 8148,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "Heist",
+        "update": 1474875001
+      },
+      {
+        "id": 8149,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "Coxyde",
+        "update": 1474875001
+      },
+      {
+        "id": 8150,
+        "country": {
+          "id": 39
+        },
+        "name": "Ieper",
+        "update": 1474875001
+      },
+      {
+        "id": 8151,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888538,
+        "name": "Temse",
+        "update": 1474875001
+      },
+      {
+        "id": 8152,
+        "country": {
+          "id": 39
+        },
+        "name": "Ternat",
+        "update": 1474875001
+      },
+      {
+        "id": 8153,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "FC Bleid",
+        "update": 1474875001
+      },
+      {
+        "id": 8669,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Gullegem",
+        "update": 1474875001
+      },
+      {
+        "id": 8671,
+        "country": {
+          "id": 39
+        },
+        "name": "Wavre",
+        "update": 1474875001
+      },
+      {
+        "id": 8673,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Berchem",
+        "update": 1474875001
+      },
+      {
+        "id": 8680,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Londerzeel",
+        "update": 1474875001
+      },
+      {
+        "id": 8721,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Huy",
+        "update": 1474875001
+      },
+      {
+        "id": 8722,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "RE Bertrigeoise",
+        "update": 1474875001
+      },
+      {
+        "id": 8723,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888539,
+        "name": "Spouwen-Moper.",
+        "update": 1474875001
+      },
+      {
+        "id": 8726,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342947603,
+        "name": "KFC Lille",
+        "update": 1474875001
+      },
+      {
+        "id": 8727,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Katelijne-Wav.",
+        "update": 1474875001
+      },
+      {
+        "id": 10935,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342950084,
+        "name": "Duffel",
+        "update": 1474875001
+      },
+      {
+        "id": 11049,
+        "country": {
+          "id": 39
+        },
+        "name": "Sint-Truid (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 11070,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Izegem",
+        "update": 1474875001
+      },
+      {
+        "id": 11071,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Olsa Brakel",
+        "update": 1474875001
+      },
+      {
+        "id": 11072,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Grimbergen",
+        "update": 1474875001
+      },
+      {
+        "id": 11073,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "RJSHLF",
+        "update": 1474875001
+      },
+      {
+        "id": 11327,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Anderlecht (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 11328,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "OH Leuven (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 11330,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Brugge (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 11331,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Z. Waregem (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 11332,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888524,
+        "name": "Lierse (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 11712,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342950687,
+        "name": "Sparta Petegem",
+        "update": 1474875001
+      },
+      {
+        "id": 11713,
+        "country": {
+          "id": 39
+        },
+        "name": "Lutlommel",
+        "update": 1474875001
+      },
+      {
+        "id": 12112,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342908431,
+        "name": "C. Brugge Yth",
+        "update": 1474875001
+      },
+      {
+        "id": 12538,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342951314,
+        "name": "R. Knokke",
+        "update": 1474875001
+      },
+      {
+        "id": 12569,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342951339,
+        "name": "KSC Menen",
+        "update": 1474875001
+      },
+      {
+        "id": 12610,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342951368,
+        "name": "Geants Athois",
+        "update": 1474875001
+      },
+      {
+        "id": 12611,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888526,
+        "name": "Mouscron-Per.",
+        "update": 1474875001
+      },
+      {
+        "id": 12612,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342951370,
+        "name": "Olym. Wijgmaal",
+        "update": 1474875001
+      },
+      {
+        "id": 12738,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Beerschot (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 12739,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342947111,
+        "name": "Heist (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 12740,
+        "country": {
+          "id": 39
+        },
+        "name": "Achterbroek(W)",
+        "update": 1474875001
+      },
+      {
+        "id": 13909,
+        "country": {
+          "id": 39
+        },
+        "name": "Rapid Leest",
+        "update": 1474875001
+      },
+      {
+        "id": 13911,
+        "country": {
+          "id": 39
+        },
+        "name": "Oostnieuwkerke",
+        "update": 1474875001
+      },
+      {
+        "id": 13918,
+        "country": {
+          "id": 39
+        },
+        "name": "Herk FC",
+        "update": 1474875001
+      },
+      {
+        "id": 13919,
+        "country": {
+          "id": 39
+        },
+        "name": "Eernegem",
+        "update": 1474875001
+      },
+      {
+        "id": 13920,
+        "country": {
+          "id": 39
+        },
+        "name": "SVV Damme",
+        "update": 1474875001
+      },
+      {
+        "id": 13921,
+        "country": {
+          "id": 39
+        },
+        "name": "Kampenhout",
+        "update": 1474875001
+      },
+      {
+        "id": 13974,
+        "country": {
+          "id": 39
+        },
+        "name": "Termien",
+        "update": 1474875001
+      },
+      {
+        "id": 13976,
+        "country": {
+          "id": 39
+        },
+        "name": "Rijmenam",
+        "update": 1474875001
+      },
+      {
+        "id": 13986,
+        "country": {
+          "id": 39
+        },
+        "name": "KWS Oudenburg",
+        "update": 1474875001
+      },
+      {
+        "id": 13995,
+        "country": {
+          "id": 39
+        },
+        "name": "Svelta Melsele",
+        "update": 1474875001
+      },
+      {
+        "id": 14170,
+        "country": {
+          "id": 39
+        },
+        "name": "RUW Ciney",
+        "update": 1474875001
+      },
+      {
+        "id": 14368,
+        "country": {
+          "id": 39
+        },
+        "name": "SV Voorde",
+        "update": 1474875001
+      },
+      {
+        "id": 14369,
+        "country": {
+          "id": 39
+        },
+        "name": "FC Pepingen",
+        "update": 1474875001
+      },
+      {
+        "id": 15549,
+        "country": {
+          "id": 39
+        },
+        "name": "KJV Kruibeke",
+        "update": 1474875001
+      },
+      {
+        "id": 15550,
+        "country": {
+          "id": 39
+        },
+        "name": "KE Wervik",
+        "update": 1474875001
+      },
+      {
+        "id": 15551,
+        "country": {
+          "id": 39
+        },
+        "name": "R. Chatelet",
+        "update": 1474875001
+      },
+      {
+        "id": 15552,
+        "country": {
+          "id": 39
+        },
+        "name": "KGR Katelijne",
+        "update": 1474875001
+      },
+      {
+        "id": 15560,
+        "country": {
+          "id": 39
+        },
+        "name": "Malmundaria",
+        "update": 1474875001
+      },
+      {
+        "id": 15561,
+        "country": {
+          "id": 39
+        },
+        "name": "Verbr. Balen",
+        "update": 1474875001
+      },
+      {
+        "id": 15562,
+        "country": {
+          "id": 39
+        },
+        "name": "Eendracht Zele",
+        "update": 1474875001
+      },
+      {
+        "id": 15564,
+        "country": {
+          "id": 39
+        },
+        "name": "Zandhoven SK",
+        "update": 1474875001
+      },
+      {
+        "id": 15578,
+        "country": {
+          "id": 39
+        },
+        "name": "KVV Zelzate",
+        "update": 1474875001
+      },
+      {
+        "id": 15616,
+        "country": {
+          "id": 39
+        },
+        "name": "KSK Bree",
+        "update": 1474875001
+      },
+      {
+        "id": 15704,
+        "country": {
+          "id": 39
+        },
+        "name": "W. Koersel",
+        "update": 1474875001
+      },
+      {
+        "id": 15718,
+        "country": {
+          "id": 39
+        },
+        "name": "KFCO",
+        "update": 1474875001
+      },
+      {
+        "id": 15735,
+        "country": {
+          "id": 39
+        },
+        "name": "RJE Binchoise",
+        "update": 1474875001
+      },
+      {
+        "id": 15813,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888528,
+        "name": "AA Gent (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 15814,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Antwerp (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 15819,
+        "country": {
+          "id": 39
+        },
+        "name": "Stade Bierbeek",
+        "update": 1474875001
+      },
+      {
+        "id": 15966,
+        "country": {
+          "id": 39
+        },
+        "name": "Everbeur",
+        "update": 1474875001
+      },
+      {
+        "id": 16202,
+        "country": {
+          "id": 39
+        },
+        "name": "Tempo Overijse",
+        "update": 1474875001
+      },
+      {
+        "id": 16203,
+        "country": {
+          "id": 39
+        },
+        "name": "VK Westhoek",
+        "update": 1474875001
+      },
+      {
+        "id": 16204,
+        "country": {
+          "id": 39
+        },
+        "name": "Wolvertem SC",
+        "update": 1474875001
+      },
+      {
+        "id": 17104,
+        "country": {
+          "id": 39
+        },
+        "name": "Genly-Quevy",
+        "update": 1474875001
+      },
+      {
+        "id": 17108,
+        "country": {
+          "id": 39
+        },
+        "name": "Witgoor Sport",
+        "update": 1474875001
+      },
+      {
+        "id": 17165,
+        "country": {
+          "id": 39
+        },
+        "name": "KFC Houtvenne",
+        "update": 1474875001
+      },
+      {
+        "id": 17186,
+        "country": {
+          "id": 39
+        },
+        "name": "S-E-Winkel Sp.",
+        "update": 1474875001
+      },
+      {
+        "id": 17431,
+        "country": {
+          "id": 39
+        },
+        "name": "SintGillisWaas",
+        "update": 1474875001
+      },
+      {
+        "id": 17432,
+        "country": {
+          "id": 39
+        },
+        "name": "RRC Waterloo",
+        "update": 1474875001
+      },
+      {
+        "id": 17433,
+        "country": {
+          "id": 39
+        },
+        "name": "Beers. Wilrijk",
+        "update": 1474875001
+      },
+      {
+        "id": 17434,
+        "country": {
+          "id": 39
+        },
+        "name": "RJS Tamines",
+        "update": 1474875001
+      },
+      {
+        "id": 17842,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Anderlecht U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17843,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Lokeren U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17844,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Kortrijk U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17845,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "KV MechelenU21",
+        "update": 1474875001
+      },
+      {
+        "id": 17846,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Cl. Brugge U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17847,
+        "country": {
+          "id": 39
+        },
+        "flag": 0,
+        "name": "Cercle Br. U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17848,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342908485,
+        "name": "Lierse U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17849,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "KAA Gent U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17850,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Oostende U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17851,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Mouscron-P U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17852,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Rac. Genk U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17853,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Waasl-Bev. U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17854,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Charleroi U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17855,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Standard L U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17856,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Westerlo U21",
+        "update": 1474875001
+      },
+      {
+        "id": 17857,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "Zulte War. U21",
+        "update": 1474875001
+      },
+      {
+        "id": 18265,
+        "country": {
+          "id": 39
+        },
+        "name": "KVK Wellen",
+        "update": 1474875001
+      },
+      {
+        "id": 18278,
+        "country": {
+          "id": 39
+        },
+        "name": "RUS Binchoise",
+        "update": 1474875001
+      },
+      {
+        "id": 18279,
+        "country": {
+          "id": 39
+        },
+        "name": "Ingelmunster",
+        "update": 1474875001
+      },
+      {
+        "id": 18280,
+        "country": {
+          "id": 39
+        },
+        "name": "Spo Kortenberg",
+        "update": 1474875001
+      },
+      {
+        "id": 18281,
+        "country": {
+          "id": 39
+        },
+        "name": "KFC Merelbeke",
+        "update": 1474875001
+      },
+      {
+        "id": 18282,
+        "country": {
+          "id": 39
+        },
+        "name": "Rochus Deurne",
+        "update": 1474875001
+      },
+      {
+        "id": 18283,
+        "country": {
+          "id": 39
+        },
+        "name": "KSK Koekelare",
+        "update": 1474875001
+      },
+      {
+        "id": 18284,
+        "country": {
+          "id": 39
+        },
+        "name": "RC Amay",
+        "update": 1474875001
+      },
+      {
+        "id": 18285,
+        "country": {
+          "id": 39
+        },
+        "name": "EendrachtHenis",
+        "update": 1474875001
+      },
+      {
+        "id": 18286,
+        "country": {
+          "id": 39
+        },
+        "name": "KFC Antonia",
+        "update": 1474875001
+      },
+      {
+        "id": 18287,
+        "country": {
+          "id": 39
+        },
+        "name": "Club Roeselare",
+        "update": 1474875001
+      },
+      {
+        "id": 18288,
+        "country": {
+          "id": 39
+        },
+        "name": "KAC Betekom",
+        "update": 1474875001
+      },
+      {
+        "id": 18289,
+        "country": {
+          "id": 39
+        },
+        "name": "Esperanza Pelt",
+        "update": 1474875001
+      },
+      {
+        "id": 18290,
+        "country": {
+          "id": 39
+        },
+        "name": "Bil Waltwilder",
+        "update": 1474875001
+      },
+      {
+        "id": 18291,
+        "country": {
+          "id": 39
+        },
+        "name": "RCS Verlaine",
+        "update": 1474875001
+      },
+      {
+        "id": 18317,
+        "country": {
+          "id": 39
+        },
+        "name": "RFC Tilleur",
+        "update": 1474875001
+      },
+      {
+        "id": 18554,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "St-Truiden U21",
+        "update": 1474875001
+      },
+      {
+        "id": 18555,
+        "country": {
+          "id": 39
+        },
+        "flag": 1450888529,
+        "name": "OH Leuven U21",
+        "update": 1474875001
+      },
+      {
+        "id": 18568,
+        "country": {
+          "id": 39
+        },
+        "name": "Sint-Lenaarts",
+        "update": 1474875001
+      },
+      {
+        "id": 18601,
+        "country": {
+          "id": 39
+        },
+        "name": "RES Acrenoise",
+        "update": 1474875001
+      },
+      {
+        "id": 18692,
+        "country": {
+          "id": 39
+        },
+        "name": "Genk (W)",
+        "update": 1474875001
+      },
+      {
+        "id": 18760,
+        "country": {
+          "id": 39
+        },
+        "name": "SK Berlare",
+        "update": 1474875001
+      },
+      {
+        "id": 18761,
+        "country": {
+          "id": 39
+        },
+        "name": "RC Charleroi",
+        "update": 1474875001
+      },
+      {
+        "id": 18762,
+        "country": {
+          "id": 39
+        },
+        "name": "RC Hades",
+        "update": 1474875001
+      },
+      {
+        "id": 18869,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342908379,
+        "name": "KAA Gent Youth",
+        "update": 1474875001
+      },
+      {
+        "id": 19043,
+        "country": {
+          "id": 39
+        },
+        "name": "Sterrebeek",
+        "update": 1474875001
+      },
+      {
+        "id": 19045,
+        "country": {
+          "id": 39
+        },
+        "name": "Eendracht V.",
+        "update": 1474875001
+      },
+      {
+        "id": 19404,
+        "country": {
+          "id": 39
+        },
+        "name": "Avanti Stekene",
+        "update": 1474875001
+      },
+      {
+        "id": 19418,
+        "country": {
+          "id": 39
+        },
+        "name": "SW Harelbeke",
+        "update": 1474875001
+      },
+      {
+        "id": 19505,
+        "country": {
+          "id": 39
+        },
+        "name": "RA Quevy-Mons",
+        "update": 1474875001
+      },
+      {
+        "id": 19566,
+        "country": {
+          "id": 39
+        },
+        "flag": 1342907751,
+        "name": "Eupen U21",
+        "update": 1474875001
+      },
+      {
+        "id": 19687,
+        "country": {
+          "id": 39
+        },
+        "name": "RFC Meux",
+        "update": 1474875001
+      },
+      {
+        "id": 19688,
+        "country": {
+          "id": 39
+        },
+        "name": "Rebecq",
+        "update": 1474875001
+      },
+      {
+        "id": 19689,
+        "country": {
+          "id": 39
+        },
+        "name": "Waremme",
+        "update": 1474875001
+      },
+      {
+        "id": 19690,
+        "country": {
+          "id": 39
+        },
+        "name": "Helson Helcht.",
+        "update": 1474875001
+      }
+    ]
+  }
+}
