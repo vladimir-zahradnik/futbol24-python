@@ -14,7 +14,12 @@ from .error import Futbol24Error
 
 from .models import (
     Country,
-    Team
+    Teams,
+    Team,
+    Matches,
+    Season,
+    League,
+    Match
 )
 
 from .api import Api

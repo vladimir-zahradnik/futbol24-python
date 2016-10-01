@@ -10,9 +10,6 @@ https://api.futbol24.gluak.com/renew
 http://api.futbol24.gluak.com/competitions
 http://api.futbol24.gluak.com/league/$ID$/tables
 
-http://api.futbol24.gluak.com/countries
-http://api.futbol24.gluak.com/countries?filter=tables
-
 http://img.futbol24.gluak.com/country/
 http://api.futbol24.gluak.com/country/$ID$/teams
 http://api.futbol24.gluak.com/country/$ID$/leagues/?filter=tables

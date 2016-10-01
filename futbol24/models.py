@@ -102,6 +102,24 @@ class Country(BaseModel):
             short_name=self.sname,
             number_of_teams=self.teams)
 
+class Teams(BaseModel):
+    """ A class representing teams structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'countries': [],
+            'teams': []
+        }
+
+        for (param, default) in self.param_defaults.items():
+            setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self):
+        return "Teams(Country={country_name}, Count={number_of_teams})".format(
+            country_name=self.countries.get(0, "Unknown"),
+            number_of_teams=len(self.teams))
+
 class Team(BaseModel):
     """ A class representing team structure. """
 
@@ -110,6 +128,7 @@ class Team(BaseModel):
         self.param_defaults = {
             'id': None,
             'country_id': None,
+            'flag': None,
             'name': None,
             'update': None
         }
@@ -127,3 +146,137 @@ class Team(BaseModel):
         return "Team(ID={team_id}, Name={name!r})".format(
             team_id=self.id,
             name=self.name)
+
+class Matches(BaseModel):
+    """ A class representing matches structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'countries': [],
+            'seasons': [],
+            'leagues': [],
+            'matches': [],
+            'range': {},
+            'update': None
+        }
+
+        for (param, default) in self.param_defaults.items():
+            setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self):
+        return "Matches(Count={number_of_matches}, Countries={number_of_countries}, Leagues={number_of_leagues})".format(
+            number_of_matches=len(self.matches),
+            number_of_countries=len(self.countries),
+            number_of_leagues=len(self.leagues))
+
+class Season(BaseModel):
+    """ A class representing season structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'id': None,
+            'name': None,
+            'sname': None,
+            'update': None
+        }
+
+        for (param, default) in self.param_defaults.items():
+            setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self):
+        return "Season(ID={season_id}, Name={name!r}, Short Name={short_name})".format(
+            season_id=self.id,
+            name=self.name,
+            short_name=self.sname)
+
+class League(BaseModel):
+    """ A class representing league structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'id': None,
+            'pid': None,
+            'country_id': None,
+            'season_id': None,
+            'order': None,
+            'has_tables': False,
+            'name': None,
+            'sname': None,
+            'colors': {},
+            'update': None
+        }
+
+        for (param, default) in self.param_defaults.items():
+            if param == 'country_id':
+                country = kwargs.get('country')
+                if country:
+                    id = country['id']
+                    setattr(self, param, id)
+
+            elif param == 'season_id':
+                season = kwargs.get('season')
+                if season:
+                    id = season['id']
+                    setattr(self, param, id)
+
+            elif param == 'has_tables':
+                setattr(self, param, kwargs.get('tables', False))
+            else:
+                setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self):
+        return "League(ID={league_id}, Name={name!r}, Short Name={short_name}, Has Tables={has_tables})".format(
+            league_id=self.id,
+            name=self.name,
+            short_name=self.sname,
+            has_tables=self.has_tables)
+
+class Match(BaseModel):
+    """ A class representing match structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'id': None,
+            'league_id': None,
+            'start_date': None,
+            'status': None,
+            'played': [],
+            'teams': {},
+            'update': {}
+        }
+
+        for (param, default) in self.param_defaults.items():
+            if param == 'league_id':
+                league = kwargs.get('league')
+                if league:
+                    id = league['id']
+                    setattr(self, param, id)
+
+            elif param == 'start_date':
+                date = kwargs.get('date')
+                if date:
+                    start_date = date['start']
+                    setattr(self, param, start_date)
+
+            elif param == 'teams':
+                data = {}
+                data['home'] = {'team': Team.new_from_json_dict(kwargs.get('teams')['home']['team']),
+                        'scores': kwargs.get('teams')['home']['scores'],
+                        'cards': kwargs.get('teams')['home']['cards']}
+                data['guest'] = {'team': Team.new_from_json_dict(kwargs.get('teams')['guest']['team']),
+                        'scores': kwargs.get('teams')['guest']['scores'],
+                        'cards': kwargs.get('teams')['guest']['cards']}
+
+                setattr(self, param, data)
+            else:
+                setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self):
+        return "Match(ID={match_id}, Home Team={home_team}, Guest Team={guest_team})".format(
+            match_id=self.id,
+            home_team=self.teams['home']['team'].name,
+            guest_team=self.teams['guest']['team'].name)

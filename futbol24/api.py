@@ -5,7 +5,7 @@ from urllib.parse import urlparse, urlunparse, urlencode
 
 import requests
 
-from futbol24 import Country, Team
+from futbol24 import Country, Teams, Team, Matches, Season, League, Match
 from futbol24.error import Futbol24Error
 
 # A singleton representing a lazily instantiated FileCache.
@@ -93,11 +93,11 @@ class Api(object):
         """
         self._request_headers['User-Agent'] = user_agent
 
-    def get_countries(self, get_only_entries_with_tables_attr=False):
+    def get_countries(self, get_only_countries_with_stats_tables=False):
         # Build request parameters
         parameters = {}
 
-        if get_only_entries_with_tables_attr:
+        if get_only_countries_with_stats_tables:
             parameters['filter'] = 'tables'
 
         url = '%s/countries' % self.base_url
@@ -120,7 +120,30 @@ class Api(object):
 
         resp = self._request_url(url, 'GET', data=parameters)
         data = self._parse_and_check_http_response(resp)
-        return [Team.new_from_json_dict(x) for x in data.get('teams', '')['list']]
+
+        teams = {'countries': [Country.new_from_json_dict(x) for x in data.get('countries', '')['list']],
+                 'teams': [Team.new_from_json_dict(x) for x in data.get('teams', '')['list']]}
+
+        return Teams.new_from_json_dict(teams)
+
+    def get_current_matches(self):
+        # Build request parameters
+        parameters = {}
+
+        url = '%s/matches/update' % self.base_url
+
+        resp = self._request_url(url, 'GET', data=parameters)
+        data = self._parse_and_check_http_response(resp)
+
+        matches = {'countries': [Country.new_from_json_dict(x) for x in data.get('countries', '')['list']],
+                   'seasons': [Season.new_from_json_dict(x) for x in data.get('seasons', '')['list']],
+                   'leagues': [League.new_from_json_dict(x) for x in data.get('leagues', '')['list']],
+                   'matches': [Match.new_from_json_dict(x) for x in data.get('matches', '')['list']],
+                   'range': data.get('matches', '')['range'],
+                   'update': data.get('matches', '')['update']}
+
+        return Matches.new_from_json_dict(matches)
+
 
     def _request_url(self, url, method, data=None, json=None):
         """Request a url.
