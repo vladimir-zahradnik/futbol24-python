@@ -79,6 +79,7 @@ class Api(object):
 
         """
         self._cookies['F24-CC'] = 'sk'
+        self._cookies['f24'] = '5-038b0e6af9e7390bdfd37bd1c85e6790265c7940'
 
         if add_compatibility_headers:
             self._request_headers['F24_APP_VERSION'] = '1.9.1'
@@ -126,11 +127,33 @@ class Api(object):
 
         return Teams.new_from_json_dict(teams)
 
-    def get_current_matches(self):
+    def get_leagues(self, country_id, get_only_leagues_with_stats_tables=False):
+        try:
+            if int(country_id) < 0:
+                raise Futbol24Error({'message': "'country_id' must be a positive number"})
+        except ValueError:
+            raise Futbol24Error({'message': "'country_id' must be an integer"})
+
         # Build request parameters
         parameters = {}
 
-        url = '%s/matches/update' % self.base_url
+        if get_only_leagues_with_stats_tables:
+            parameters['filter'] = 'tables'
+
+        url = '{0}/country/{1}/leagues'.format(self.base_url, country_id)
+
+        resp = self._request_url(url, 'GET', data=parameters)
+
+        return resp
+
+    def get_updated_matches(self, update_id=None):
+        # Build request parameters
+        parameters = {}
+
+        if update_id:
+            url = '{0}/matches/update/{1}'.format(self.base_url, update_id)
+        else:
+            url = '%s/matches/update' % self.base_url
 
         resp = self._request_url(url, 'GET', data=parameters)
         data = self._parse_and_check_http_response(resp)

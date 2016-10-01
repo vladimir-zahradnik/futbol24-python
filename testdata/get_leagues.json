@@ -1,0 +1,2320 @@
+{
+  "countries": {
+    "list": [
+      {
+        "id": 54,
+        "type": 0,
+        "name": "Wales",
+        "sname": "WAL",
+        "order": 0,
+        "tables": 6,
+        "teams": 91,
+        "update": 1473835744
+      }
+    ]
+  },
+  "seasons": {
+    "list": [
+      {
+        "id": 21,
+        "name": "2009/2010",
+        "sname": "09/10",
+        "update": 1330901733
+      },
+      {
+        "id": 23,
+        "name": "2010/2011",
+        "sname": "10/11",
+        "update": 1330901733
+      },
+      {
+        "id": 25,
+        "name": "2011/2012",
+        "sname": "11/12",
+        "update": 1330901733
+      },
+      {
+        "id": 27,
+        "name": "2012",
+        "sname": "12",
+        "update": 1330901733
+      },
+      {
+        "id": 28,
+        "name": "2012/2013",
+        "sname": "12/13",
+        "update": 1330901733
+      },
+      {
+        "id": 30,
+        "name": "2013/2014",
+        "sname": "13/14",
+        "update": 1361661333
+      },
+      {
+        "id": 33,
+        "name": "2014/2015",
+        "sname": "14/15",
+        "update": 1396820480
+      },
+      {
+        "id": 35,
+        "name": "2015/2016",
+        "sname": "15/16",
+        "update": 1428727944
+      },
+      {
+        "id": 38,
+        "name": "2016/2017",
+        "sname": "16/17",
+        "update": 1463127052
+      }
+    ]
+  },
+  "leagues": {
+    "list": [
+      {
+        "id": 16800,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 17372,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Group 1",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 17373,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Group 2",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 17374,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Group 3",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 17375,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Group 4",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 17376,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Group 5",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 17377,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Group 6",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 18288,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Quarter-finals",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 18425,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Semifinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 19514,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Final",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 19516,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 4",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 19517,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Quarterfinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 19518,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Semifinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 19519,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 21
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Final",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "FF0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 21384,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 1",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 21385,
+        "pid": 0,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 2",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 21386,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Semifinal",
+        "sname": "LC",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 21387,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Final",
+        "sname": "LC",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 21388,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 1329234237
+      },
+      {
+        "id": 22490,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 4",
+        "sname": "Cup",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 22491,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Quarterfinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 22492,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Semifinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 22493,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Final",
+        "sname": "Cup",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 22494,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 3",
+        "sname": "Cup",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 24167,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Europa League Playoff QF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 24168,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Europa League Playoff SF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 24418,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Europa League Playoff Final",
+        "sname": "D1PO",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 0
+      },
+      {
+        "id": 25030,
+        "pid": 69,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Cymru Alliance",
+        "sname": "D2CA",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 25093,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 1312583084
+      },
+      {
+        "id": 25094,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1335027607
+      },
+      {
+        "id": 25095,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1335025849
+      },
+      {
+        "id": 25096,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff Final",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1336904537
+      },
+      {
+        "id": 25149,
+        "pid": 68,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Football League 1st Div",
+        "sname": "D2FL",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1329777994
+      },
+      {
+        "id": 25781,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Round 1",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 0
+      },
+      {
+        "id": 25782,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Round 2",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1328941374
+      },
+      {
+        "id": 25783,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Semifinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1332154447
+      },
+      {
+        "id": 25784,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Final",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1335046664
+      },
+      {
+        "id": 26310,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 27
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Round 4",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1346866501
+      },
+      {
+        "id": 26311,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Quarterfinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1346866501
+      },
+      {
+        "id": 26312,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Semifinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1346866501
+      },
+      {
+        "id": 26313,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Final",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1346866501
+      },
+      {
+        "id": 26314,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Round 3",
+        "sname": "Cup",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 1346866501
+      },
+      {
+        "id": 27812,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff QF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1336040318
+      },
+      {
+        "id": 27813,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff SF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1336255327
+      },
+      {
+        "id": 28517,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1362538695
+      },
+      {
+        "id": 28518,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1367080965
+      },
+      {
+        "id": 28519,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1367080894
+      },
+      {
+        "id": 28520,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff Final",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1368537487
+      },
+      {
+        "id": 28521,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff SF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1368058670
+      },
+      {
+        "id": 28522,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff QF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1367941481
+      },
+      {
+        "id": 28683,
+        "pid": 68,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Football League 1st Div",
+        "sname": "D2FL",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1367941481
+      },
+      {
+        "id": 28806,
+        "pid": 69,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Cymru Alliance",
+        "sname": "D2CA",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1365106174
+      },
+      {
+        "id": 28955,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 1",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1346866501
+      },
+      {
+        "id": 28956,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 2",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1349945786
+      },
+      {
+        "id": 28957,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Semifinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1353671698
+      },
+      {
+        "id": 28958,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Final",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1362516927
+      },
+      {
+        "id": 28959,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Quarterfinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1349945786
+      },
+      {
+        "id": 30294,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 4",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1362516927
+      },
+      {
+        "id": 30295,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Quarterfinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1362516927
+      },
+      {
+        "id": 30296,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Semifinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1365287868
+      },
+      {
+        "id": 30297,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Final",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1384361179
+      },
+      {
+        "id": 30298,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 3",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1362516927
+      },
+      {
+        "id": 32220,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1406656733
+      },
+      {
+        "id": 32221,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1399085605
+      },
+      {
+        "id": 32222,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1399085605
+      },
+      {
+        "id": 32223,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff Final",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1406635065
+      },
+      {
+        "id": 32224,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff SF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1406635065
+      },
+      {
+        "id": 32225,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff QF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1399157614
+      },
+      {
+        "id": 32671,
+        "pid": 69,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Cymru Alliance",
+        "sname": "D2CA",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1377719967
+      },
+      {
+        "id": 33051,
+        "pid": 68,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Football League 1st Div",
+        "sname": "D2FL",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1378213524
+      },
+      {
+        "id": 33393,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 1",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1384361179
+      },
+      {
+        "id": 33394,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 2",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1384361179
+      },
+      {
+        "id": 33395,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Semifinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1384361179
+      },
+      {
+        "id": 33396,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Final",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1398210160
+      },
+      {
+        "id": 33397,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Quarterfinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1384361179
+      },
+      {
+        "id": 34059,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 4",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1398210160
+      },
+      {
+        "id": 34060,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Quarterfinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1398210160
+      },
+      {
+        "id": 34061,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Semifinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1398210160
+      },
+      {
+        "id": 34062,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Final",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1399060424
+      },
+      {
+        "id": 34063,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 3",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1385830784
+      },
+      {
+        "id": 36866,
+        "pid": 68,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Football League 1st Div",
+        "sname": "D2FL",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1408101905
+      },
+      {
+        "id": 36960,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1429498158
+      },
+      {
+        "id": 36961,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1430059333
+      },
+      {
+        "id": 36962,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1430056702
+      },
+      {
+        "id": 36963,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff Final",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1431583547
+      },
+      {
+        "id": 36964,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff SF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1430903123
+      },
+      {
+        "id": 36965,
+        "pid": 69,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Cymru Alliance",
+        "sname": "D2CA",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1414501432
+      },
+      {
+        "id": 36967,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 1",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1410050796
+      },
+      {
+        "id": 36968,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 2",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1410050796
+      },
+      {
+        "id": 36969,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Semifinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1417629745
+      },
+      {
+        "id": 36970,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Final",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1422973309
+      },
+      {
+        "id": 36971,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Quarterfinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1411545643
+      },
+      {
+        "id": 38075,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 4",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1422973309
+      },
+      {
+        "id": 38076,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Quarterfinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1425837979
+      },
+      {
+        "id": 38077,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Semifinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1428230391
+      },
+      {
+        "id": 38078,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Final",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1430075589
+      },
+      {
+        "id": 38079,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 3",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1417629745
+      },
+      {
+        "id": 40431,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1461626543
+      },
+      {
+        "id": 40432,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1461626543
+      },
+      {
+        "id": 40433,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1461626543
+      },
+      {
+        "id": 40434,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff Final",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1463119850
+      },
+      {
+        "id": 40435,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Premier, Europa League Playoff SF",
+        "sname": "D1PO",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1462516140
+      },
+      {
+        "id": 41240,
+        "pid": 68,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Football League 1st Div",
+        "sname": "D2FL",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1439577304
+      },
+      {
+        "id": 41241,
+        "pid": 69,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Cymru Alliance",
+        "sname": "D2CA",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1440692522
+      },
+      {
+        "id": 41343,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 1",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1442074347
+      },
+      {
+        "id": 41344,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 2",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1443381775
+      },
+      {
+        "id": 41345,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Semifinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1450616863
+      },
+      {
+        "id": 41346,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Final",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1453415745
+      },
+      {
+        "id": 41347,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Quarterfinal",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1446836926
+      },
+      {
+        "id": 42113,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 4",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1453415745
+      },
+      {
+        "id": 42114,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Quarterfinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1461229528
+      },
+      {
+        "id": 42115,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Semifinal",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1461229528
+      },
+      {
+        "id": 42116,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Final",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1470827652
+      },
+      {
+        "id": 42117,
+        "pid": 522,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": false,
+        "name": "FAW Welsh Cup, Round 3",
+        "sname": "Cup",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1450616863
+      },
+      {
+        "id": 44637,
+        "pid": 69,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 38
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Cymru Alliance",
+        "sname": "D2CA",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1471504469
+      },
+      {
+        "id": 44638,
+        "pid": 68,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 38
+        },
+        "order": 0,
+        "tables": false,
+        "name": "Football League 1st Div",
+        "sname": "D2FL",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1470982440
+      },
+      {
+        "id": 45029,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 38
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1475343728
+      },
+      {
+        "id": 45482,
+        "pid": 70,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 38
+        },
+        "order": 0,
+        "tables": false,
+        "name": "League Cup, Round 1",
+        "sname": "LC",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1473172482
+      }
+    ]
+  }
+}

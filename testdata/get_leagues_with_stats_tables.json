@@ -1,0 +1,389 @@
+{
+  "countries": {
+    "list": [
+      {
+        "id": 54,
+        "type": 0,
+        "name": "Wales",
+        "sname": "WAL",
+        "order": 0,
+        "tables": 6,
+        "teams": 91,
+        "update": 1473835744
+      }
+    ]
+  },
+  "seasons": {
+    "list": [
+      {
+        "id": 23,
+        "name": "2010/2011",
+        "sname": "10/11",
+        "update": 1330901733
+      },
+      {
+        "id": 25,
+        "name": "2011/2012",
+        "sname": "11/12",
+        "update": 1330901733
+      },
+      {
+        "id": 28,
+        "name": "2012/2013",
+        "sname": "12/13",
+        "update": 1330901733
+      },
+      {
+        "id": 30,
+        "name": "2013/2014",
+        "sname": "13/14",
+        "update": 1361661333
+      },
+      {
+        "id": 33,
+        "name": "2014/2015",
+        "sname": "14/15",
+        "update": 1396820480
+      },
+      {
+        "id": 35,
+        "name": "2015/2016",
+        "sname": "15/16",
+        "update": 1428727944
+      },
+      {
+        "id": 38,
+        "name": "2016/2017",
+        "sname": "16/17",
+        "update": 1463127052
+      }
+    ]
+  },
+  "leagues": {
+    "list": [
+      {
+        "id": 21388,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 23
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 1329234237
+      },
+      {
+        "id": 25093,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "ff0000",
+          "foreground": "046800"
+        },
+        "update": 1312583084
+      },
+      {
+        "id": 25094,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1335027607
+      },
+      {
+        "id": 25095,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 25
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1335025849
+      },
+      {
+        "id": 28517,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1362538695
+      },
+      {
+        "id": 28518,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1367080965
+      },
+      {
+        "id": 28519,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 28
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1367080894
+      },
+      {
+        "id": 32220,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1406656733
+      },
+      {
+        "id": 32221,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1399085605
+      },
+      {
+        "id": 32222,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 30
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1399085605
+      },
+      {
+        "id": 36960,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1429498158
+      },
+      {
+        "id": 36961,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1430059333
+      },
+      {
+        "id": 36962,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 33
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1430056702
+      },
+      {
+        "id": 40431,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1461626543
+      },
+      {
+        "id": 40432,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Championship Group",
+        "sname": "D1C",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1461626543
+      },
+      {
+        "id": 40433,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 35
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier, Relegation Group",
+        "sname": "D1R",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1461626543
+      },
+      {
+        "id": 45029,
+        "pid": 67,
+        "country": {
+          "id": 54
+        },
+        "season": {
+          "id": 38
+        },
+        "order": 0,
+        "tables": true,
+        "name": "Premier",
+        "sname": "D1",
+        "colors": {
+          "background": "046800",
+          "foreground": "ff0000"
+        },
+        "update": 1475343728
+      }
+    ]
+  }
+}
