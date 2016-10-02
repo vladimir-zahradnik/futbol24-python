@@ -1,0 +1,754 @@
+{
+  "countries": {
+    "list": [
+      {
+        "id": 54,
+        "type": 0,
+        "name": "Wales",
+        "sname": "WAL",
+        "order": 0,
+        "tables": 6,
+        "teams": 91,
+        "update": 1475393837
+      }
+    ]
+  },
+  "teams": {
+    "list": [
+      {
+        "id": 1327,
+        "country": {
+          "id": 54
+        },
+        "flag": 1450888526,
+        "name": "TNS",
+        "update": 1475393401
+      },
+      {
+        "id": 8221,
+        "country": {
+          "id": 54
+        },
+        "flag": 1450888538,
+        "name": "Bala Town",
+        "update": 1475393401
+      },
+      {
+        "id": 3761,
+        "country": {
+          "id": 54
+        },
+        "flag": 1450888533,
+        "name": "Llandudno",
+        "update": 1475393401
+      },
+      {
+        "id": 1333,
+        "country": {
+          "id": 54
+        },
+        "flag": 1450888526,
+        "name": "Connahs Quay",
+        "update": 1475393401
+      },
+      {
+        "id": 1335,
+        "country": {
+          "id": 54
+        },
+        "flag": 1450888526,
+        "name": "Newtown AFC",
+        "update": 1475393401
+      },
+      {
+        "id": 1342,
+        "country": {
+          "id": 54
+        },
+        "flag": 1450888526,
+        "name": "Airbus UK",
+        "update": 1475393401
+      }
+    ]
+  },
+  "tables": {
+    "1": {
+      "name": {
+        "en": "Table",
+        "de": "Tabelle",
+        "it": "Classifica",
+        "default": "Table"
+      },
+      "table": 1,
+      "list": [
+        {
+          "id": 7909983,
+          "limit": 6,
+          "rank": 1,
+          "games": 10,
+          "points": 64,
+          "won": 5,
+          "drawn": 2,
+          "lost": 3,
+          "Gf": 72,
+          "Ga": 24,
+          "Gd": 48,
+          "bg": "7DD753",
+          "team": {
+            "id": 1327
+          }
+        },
+        {
+          "id": 7909984,
+          "limit": 6,
+          "rank": 2,
+          "games": 10,
+          "points": 57,
+          "won": 4,
+          "drawn": 4,
+          "lost": 2,
+          "Gf": 48,
+          "Ga": 27,
+          "Gd": 21,
+          "bg": "33C1FF",
+          "team": {
+            "id": 8221
+          }
+        },
+        {
+          "id": 7909985,
+          "limit": 6,
+          "rank": 3,
+          "games": 10,
+          "points": 52,
+          "won": 4,
+          "drawn": 3,
+          "lost": 3,
+          "Gf": 53,
+          "Ga": 46,
+          "Gd": 7,
+          "bg": "95DFFF",
+          "team": {
+            "id": 3761
+          }
+        },
+        {
+          "id": 7909987,
+          "limit": 6,
+          "rank": 4,
+          "games": 10,
+          "points": 48,
+          "won": 5,
+          "drawn": 1,
+          "lost": 4,
+          "Gf": 50,
+          "Ga": 42,
+          "Gd": 8,
+          "bg": "95DFFF",
+          "team": {
+            "id": 1333
+          }
+        },
+        {
+          "id": 7909988,
+          "limit": 6,
+          "rank": 5,
+          "games": 10,
+          "points": 42,
+          "won": 2,
+          "drawn": 4,
+          "lost": 4,
+          "Gf": 46,
+          "Ga": 54,
+          "Gd": -8,
+          "bg": "95DFFF",
+          "team": {
+            "id": 1335
+          }
+        },
+        {
+          "id": 7909986,
+          "limit": 6,
+          "rank": 6,
+          "games": 10,
+          "points": 42,
+          "won": 2,
+          "drawn": 2,
+          "lost": 6,
+          "Gf": 46,
+          "Ga": 55,
+          "Gd": -9,
+          "bg": "95DFFF",
+          "team": {
+            "id": 1342
+          }
+        }
+      ]
+    },
+    "2": {
+      "name": {
+        "en": "Home",
+        "de": "Heim",
+        "it": "In casa",
+        "default": "Home"
+      },
+      "table": 2,
+      "list": [
+        {
+          "id": 7909994,
+          "limit": 6,
+          "rank": 1,
+          "games": 5,
+          "points": 10,
+          "won": 3,
+          "drawn": 1,
+          "lost": 1,
+          "Gf": 10,
+          "Ga": 2,
+          "Gd": 8,
+          "bg": "",
+          "team": {
+            "id": 1327
+          }
+        },
+        {
+          "id": 7909990,
+          "limit": 6,
+          "rank": 2,
+          "games": 5,
+          "points": 9,
+          "won": 2,
+          "drawn": 3,
+          "lost": 0,
+          "Gf": 7,
+          "Ga": 3,
+          "Gd": 4,
+          "bg": "",
+          "team": {
+            "id": 8221
+          }
+        },
+        {
+          "id": 7909991,
+          "limit": 6,
+          "rank": 3,
+          "games": 5,
+          "points": 9,
+          "won": 3,
+          "drawn": 0,
+          "lost": 2,
+          "Gf": 7,
+          "Ga": 6,
+          "Gd": 1,
+          "bg": "",
+          "team": {
+            "id": 1333
+          }
+        },
+        {
+          "id": 7909992,
+          "limit": 6,
+          "rank": 4,
+          "games": 5,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "Gf": 9,
+          "Ga": 12,
+          "Gd": -3,
+          "bg": "",
+          "team": {
+            "id": 3761
+          }
+        },
+        {
+          "id": 7909993,
+          "limit": 6,
+          "rank": 5,
+          "games": 5,
+          "points": 5,
+          "won": 1,
+          "drawn": 2,
+          "lost": 2,
+          "Gf": 6,
+          "Ga": 14,
+          "Gd": -8,
+          "bg": "",
+          "team": {
+            "id": 1335
+          }
+        },
+        {
+          "id": 7909989,
+          "limit": 6,
+          "rank": 6,
+          "games": 5,
+          "points": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 3,
+          "Gf": 8,
+          "Ga": 12,
+          "Gd": -4,
+          "bg": "",
+          "team": {
+            "id": 1342
+          }
+        }
+      ]
+    },
+    "3": {
+      "name": {
+        "en": "Away",
+        "de": "Auswärts",
+        "it": "In trasferta",
+        "default": "Away"
+      },
+      "table": 3,
+      "list": [
+        {
+          "id": 7909998,
+          "limit": 6,
+          "rank": 1,
+          "games": 5,
+          "points": 8,
+          "won": 2,
+          "drawn": 2,
+          "lost": 1,
+          "Gf": 8,
+          "Ga": 8,
+          "Gd": 0,
+          "bg": "",
+          "team": {
+            "id": 3761
+          }
+        },
+        {
+          "id": 7910000,
+          "limit": 6,
+          "rank": 2,
+          "games": 5,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "Gf": 14,
+          "Ga": 6,
+          "Gd": 8,
+          "bg": "",
+          "team": {
+            "id": 1327
+          }
+        },
+        {
+          "id": 7909996,
+          "limit": 6,
+          "rank": 3,
+          "games": 5,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "Gf": 8,
+          "Ga": 7,
+          "Gd": 1,
+          "bg": "",
+          "team": {
+            "id": 8221
+          }
+        },
+        {
+          "id": 7909997,
+          "limit": 6,
+          "rank": 4,
+          "games": 5,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "Gf": 6,
+          "Ga": 7,
+          "Gd": -1,
+          "bg": "",
+          "team": {
+            "id": 1333
+          }
+        },
+        {
+          "id": 7909999,
+          "limit": 6,
+          "rank": 5,
+          "games": 5,
+          "points": 5,
+          "won": 1,
+          "drawn": 2,
+          "lost": 2,
+          "Gf": 7,
+          "Ga": 8,
+          "Gd": -1,
+          "bg": "",
+          "team": {
+            "id": 1335
+          }
+        },
+        {
+          "id": 7909995,
+          "limit": 6,
+          "rank": 6,
+          "games": 5,
+          "points": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 3,
+          "Gf": 6,
+          "Ga": 11,
+          "Gd": -5,
+          "bg": "",
+          "team": {
+            "id": 1342
+          }
+        }
+      ]
+    },
+    "4": {
+      "name": {
+        "en": "Form - Home/Away",
+        "de": "Heim-/Auswärtsform",
+        "it": "Stato di forma - Casa/Trasferta",
+        "default": "Form - Home/Away"
+      },
+      "table": 4,
+      "list": [
+        {
+          "id": 7910002,
+          "limit": 6,
+          "rank": 1,
+          "games": 6,
+          "points": 9,
+          "won": 2,
+          "drawn": 3,
+          "lost": 1,
+          "Gf": 6,
+          "Ga": 5,
+          "Gd": 1,
+          "bg": "",
+          "team": {
+            "id": 8221
+          }
+        },
+        {
+          "id": 7910003,
+          "limit": 6,
+          "rank": 2,
+          "games": 6,
+          "points": 9,
+          "won": 3,
+          "drawn": 0,
+          "lost": 3,
+          "Gf": 9,
+          "Ga": 10,
+          "Gd": -1,
+          "bg": "",
+          "team": {
+            "id": 1333
+          }
+        },
+        {
+          "id": 7910005,
+          "limit": 6,
+          "rank": 3,
+          "games": 6,
+          "points": 8,
+          "won": 2,
+          "drawn": 2,
+          "lost": 2,
+          "Gf": 11,
+          "Ga": 13,
+          "Gd": -2,
+          "bg": "",
+          "team": {
+            "id": 1335
+          }
+        },
+        {
+          "id": 7910006,
+          "limit": 6,
+          "rank": 4,
+          "games": 6,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 3,
+          "Gf": 11,
+          "Ga": 8,
+          "Gd": 3,
+          "bg": "",
+          "team": {
+            "id": 1327
+          }
+        },
+        {
+          "id": 7910001,
+          "limit": 6,
+          "rank": 5,
+          "games": 6,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 3,
+          "Gf": 13,
+          "Ga": 13,
+          "Gd": 0,
+          "bg": "",
+          "team": {
+            "id": 1342
+          }
+        },
+        {
+          "id": 7910004,
+          "limit": 6,
+          "rank": 6,
+          "games": 6,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 3,
+          "Gf": 9,
+          "Ga": 14,
+          "Gd": -5,
+          "bg": "",
+          "team": {
+            "id": 3761
+          }
+        }
+      ]
+    },
+    "5": {
+      "name": {
+        "en": "Form - Home",
+        "de": "Heimform",
+        "it": "Stato di forma - Casa",
+        "default": "Form - Home"
+      },
+      "table": 5,
+      "list": [
+        {
+          "id": 7910012,
+          "limit": 6,
+          "rank": 1,
+          "games": 5,
+          "points": 10,
+          "won": 3,
+          "drawn": 1,
+          "lost": 1,
+          "Gf": 10,
+          "Ga": 2,
+          "Gd": 8,
+          "bg": "",
+          "team": {
+            "id": 1327
+          }
+        },
+        {
+          "id": 7910008,
+          "limit": 6,
+          "rank": 2,
+          "games": 5,
+          "points": 9,
+          "won": 2,
+          "drawn": 3,
+          "lost": 0,
+          "Gf": 7,
+          "Ga": 3,
+          "Gd": 4,
+          "bg": "",
+          "team": {
+            "id": 8221
+          }
+        },
+        {
+          "id": 7910009,
+          "limit": 6,
+          "rank": 3,
+          "games": 5,
+          "points": 9,
+          "won": 3,
+          "drawn": 0,
+          "lost": 2,
+          "Gf": 7,
+          "Ga": 6,
+          "Gd": 1,
+          "bg": "",
+          "team": {
+            "id": 1333
+          }
+        },
+        {
+          "id": 7910010,
+          "limit": 6,
+          "rank": 4,
+          "games": 5,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "Gf": 9,
+          "Ga": 12,
+          "Gd": -3,
+          "bg": "",
+          "team": {
+            "id": 3761
+          }
+        },
+        {
+          "id": 7910011,
+          "limit": 6,
+          "rank": 5,
+          "games": 5,
+          "points": 5,
+          "won": 1,
+          "drawn": 2,
+          "lost": 2,
+          "Gf": 6,
+          "Ga": 14,
+          "Gd": -8,
+          "bg": "",
+          "team": {
+            "id": 1335
+          }
+        },
+        {
+          "id": 7910007,
+          "limit": 6,
+          "rank": 6,
+          "games": 5,
+          "points": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 3,
+          "Gf": 8,
+          "Ga": 12,
+          "Gd": -4,
+          "bg": "",
+          "team": {
+            "id": 1342
+          }
+        }
+      ]
+    },
+    "6": {
+      "name": {
+        "en": "Form - Away",
+        "de": "Auswärtsform",
+        "it": "Stato di forma - Trasferta",
+        "default": "Form - Away"
+      },
+      "table": 6,
+      "list": [
+        {
+          "id": 7910016,
+          "limit": 6,
+          "rank": 1,
+          "games": 5,
+          "points": 8,
+          "won": 2,
+          "drawn": 2,
+          "lost": 1,
+          "Gf": 8,
+          "Ga": 8,
+          "Gd": 0,
+          "bg": "",
+          "team": {
+            "id": 3761
+          }
+        },
+        {
+          "id": 7910018,
+          "limit": 6,
+          "rank": 2,
+          "games": 5,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "Gf": 14,
+          "Ga": 6,
+          "Gd": 8,
+          "bg": "",
+          "team": {
+            "id": 1327
+          }
+        },
+        {
+          "id": 7910014,
+          "limit": 6,
+          "rank": 3,
+          "games": 5,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "Gf": 8,
+          "Ga": 7,
+          "Gd": 1,
+          "bg": "",
+          "team": {
+            "id": 8221
+          }
+        },
+        {
+          "id": 7910015,
+          "limit": 6,
+          "rank": 4,
+          "games": 5,
+          "points": 7,
+          "won": 2,
+          "drawn": 1,
+          "lost": 2,
+          "Gf": 6,
+          "Ga": 7,
+          "Gd": -1,
+          "bg": "",
+          "team": {
+            "id": 1333
+          }
+        },
+        {
+          "id": 7910017,
+          "limit": 6,
+          "rank": 5,
+          "games": 5,
+          "points": 5,
+          "won": 1,
+          "drawn": 2,
+          "lost": 2,
+          "Gf": 7,
+          "Ga": 8,
+          "Gd": -1,
+          "bg": "",
+          "team": {
+            "id": 1335
+          }
+        },
+        {
+          "id": 7910013,
+          "limit": 6,
+          "rank": 6,
+          "games": 5,
+          "points": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 3,
+          "Gf": 6,
+          "Ga": 11,
+          "Gd": -5,
+          "bg": "",
+          "team": {
+            "id": 1342
+          }
+        }
+      ]
+    }
+  }
+}

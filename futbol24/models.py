@@ -170,6 +170,26 @@ class Matches(BaseModel):
             number_of_countries=len(self.countries),
             number_of_leagues=len(self.leagues))
 
+class Leagues(BaseModel):
+    """ A class representing leagues structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'country': None,
+            'seasons': [],
+            'leagues': []
+        }
+
+        for (param, default) in self.param_defaults.items():
+            setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self):
+        return "Country={country_name}, Leagues(Count={number_of_leagues})".format(
+            country_name=self.country.name,
+            number_of_leagues=len(self.leagues))
+
+
 class Season(BaseModel):
     """ A class representing season structure. """
 

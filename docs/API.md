@@ -10,13 +10,7 @@ https://api.futbol24.gluak.com/renew
 http://api.futbol24.gluak.com/competitions
 http://api.futbol24.gluak.com/league/$ID$/tables
 
-http://img.futbol24.gluak.com/country/
-http://api.futbol24.gluak.com/country/$ID$/teams
-http://api.futbol24.gluak.com/country/$ID$/leagues/?filter=tables
-
 http://api.futbol24.gluak.com/matches/get
-http://api.futbol24.gluak.com/matches/update
-http://api.futbol24.gluak.com/matches/update/${ID}
 http://api.futbol24.gluak.com/matches/team/$ID$
 http://api.futbol24.gluak.com/matches/team/$ID$/away
 http://api.futbol24.gluak.com/matches/team/$ID$/home

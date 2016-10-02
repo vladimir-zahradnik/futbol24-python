@@ -17,6 +17,7 @@ from .models import (
     Teams,
     Team,
     Matches,
+    Leagues,
     Season,
     League,
     Match
