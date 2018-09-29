@@ -12,12 +12,18 @@ __description__ = 'A Python wrapper around the Futbol24.com API'
 from .api import Api
 from .error import Futbol24Error
 from .models import (
+    Status,
+    Range,
     Country,
-    Teams,
-    Team,
-    Matches,
-    Leagues,
-    Season,
+    Competition,
     League,
+    Team,
     Match
+    # Teams,
+    # Team,
+    # Matches,
+    # Leagues,
+    # Season,
+    # League,
+    # Match
 )

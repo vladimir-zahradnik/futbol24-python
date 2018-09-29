@@ -1,5 +1,8 @@
 import json
 
+# static type-checking
+from typing import Dict
+
 try:
     from rfc822 import parsedate
 except ImportError:
@@ -76,6 +79,58 @@ class BaseModel(object):
 
 
 # noinspection PyUnresolvedReferences
+class Status(BaseModel):
+    """ A class representing status structure. Each field contains
+     timestamp (unix epoch time) of database update for corresponding type. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults: Dict[str, int] = {
+            'update_countries': None,
+            'update_competitions': None,
+            'update_seasons': None,
+            'update_leagues': None,
+            'update_teams': None,
+            'update_matches': None
+        }
+
+        for (param, default) in self.param_defaults.items():
+            setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self) -> str:
+        return "Status(update_keys)"
+
+
+# noinspection PyUnresolvedReferences
+class Range(BaseModel):
+    """ A class representing country structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'date_d': None,  # str
+            'date_m': None,  # str
+            'type': None,  # int
+            'hour_new_day': None,  # int
+            'hour': None,  # int
+            'day': None,  # int, unix epoch time
+            'day_s': None,  # str, day as a string
+            'start': None,  # int, unix epoch time
+            'start_s': None,  # str, start date and time as a string
+            'end': None,  # int, unix epoch time
+            'end_s': None  # str, end date and time as a string
+        }
+
+        for (param, default) in self.param_defaults.items():
+            setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self) -> str:
+        return "Range({start_str} - {end_str})".format(
+            start_str=self.start_s,
+            end_str=self.end_s)
+
+
+# noinspection PyUnresolvedReferences
 class Country(BaseModel):
     """ A class representing country structure. """
 
@@ -83,44 +138,77 @@ class Country(BaseModel):
         super().__init__(**kwargs)
         self.param_defaults = {
             'id': None,
-            'type': None,
+            'national': False,
             'name': None,
             'sname': None,
-            'order': None,
-            'tables': None,
-            'teams': None,
-            'update': None
+            'flag_url_medium': None,
+            'updated': None
         }
 
         for (param, default) in self.param_defaults.items():
             setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
-        return "Country(ID={country_id}, Name={name!r}, Short Name={short_name}, Teams={number_of_teams})".format(
+        return "Country(ID={country_id}, Name={name!r}, Short Name={short_name})".format(
             country_id=self.id,
+            national=self.national,
             name=self.name,
-            short_name=self.sname,
-            number_of_teams=self.teams)
+            short_name=self.sname)
 
 
 # noinspection PyUnresolvedReferences
-class Teams(BaseModel):
-    """ A class representing teams structure. """
+class Competition(BaseModel):
+    """ A class representing competiton structure. """
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.param_defaults = {
-            'countries': [],
-            'teams': []
+            'id': None,
+            'country_id': None,
+            'popularity': None,
+            'name': None,
+            'foreground': None,
+            'background': None,
+            'standings': False,
+            'available_standings': False,
+            'updated': None
         }
 
         for (param, default) in self.param_defaults.items():
             setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
-        return "Teams(Country={country_name}, Count={number_of_teams})".format(
-            country_name=self.countries.get(0, "Unknown"),
-            number_of_teams=len(self.teams))
+        return "Competition(ID={competition_id}, Name={name!r})".format(
+            competition_id=self.id,
+            name=self.name)
+
+
+# noinspection PyUnresolvedReferences
+class League(BaseModel):
+    """ A class representing league structure. """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.param_defaults = {
+            'id': None,
+            'competition_id': None,
+            'season_id': None,
+            'name': None,
+            'dname': None,
+            'foreground': None,
+            'background': False,
+            'standings': False,
+            'available_standings': None,
+            'updated': None
+        }
+
+        for (param, default) in self.param_defaults.items():
+            setattr(self, param, kwargs.get(param, default))
+
+    def __repr__(self) -> str:
+        return "League(ID={league_id}, Name={name!r})".format(
+            league_id=self.id,
+            name=self.name)
 
 
 # noinspection PyUnresolvedReferences
@@ -132,138 +220,18 @@ class Team(BaseModel):
         self.param_defaults = {
             'id': None,
             'country_id': None,
-            'flag': None,
             'name': None,
-            'update': None
+            'sname': None,
+            'updated': None
         }
 
         for (param, default) in self.param_defaults.items():
-            if param == 'country_id':
-                country = kwargs.get('country')
-                if country:
-                    id = country['id']
-                    setattr(self, param, id)
-            else:
-                setattr(self, param, kwargs.get(param, default))
+            setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
         return "Team(ID={team_id}, Name={name!r})".format(
             team_id=self.id,
             name=self.name)
-
-
-# noinspection PyUnresolvedReferences
-class Matches(BaseModel):
-    """ A class representing matches structure. """
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.param_defaults = {
-            'countries': [],
-            'seasons': [],
-            'leagues': [],
-            'matches': [],
-            'range': {},
-            'update': None
-        }
-
-        for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
-
-    def __repr__(self) -> str:
-        return "Matches(Count={number_of_matches}, Countries={number_of_countries}, Leagues={number_of_leagues})".format(
-            number_of_matches=len(self.matches),
-            number_of_countries=len(self.countries),
-            number_of_leagues=len(self.leagues))
-
-
-# noinspection PyUnresolvedReferences
-class Leagues(BaseModel):
-    """ A class representing leagues structure. """
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.param_defaults = {
-            'country': None,
-            'seasons': [],
-            'leagues': []
-        }
-
-        for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
-
-    def __repr__(self) -> str:
-        return "Country={country_name}, Leagues(Count={number_of_leagues})".format(
-            country_name=self.country.name,
-            number_of_leagues=len(self.leagues))
-
-
-# noinspection PyUnresolvedReferences
-class Season(BaseModel):
-    """ A class representing season structure. """
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.param_defaults = {
-            'id': None,
-            'name': None,
-            'sname': None,
-            'update': None
-        }
-
-        for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
-
-    def __repr__(self) -> str:
-        return "Season(ID={season_id}, Name={name!r}, Short Name={short_name})".format(
-            season_id=self.id,
-            name=self.name,
-            short_name=self.sname)
-
-
-# noinspection PyUnresolvedReferences
-class League(BaseModel):
-    """ A class representing league structure. """
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.param_defaults = {
-            'id': None,
-            'pid': None,
-            'country_id': None,
-            'season_id': None,
-            'order': None,
-            'has_tables': False,
-            'name': None,
-            'sname': None,
-            'colors': {},
-            'update': None
-        }
-
-        for (param, default) in self.param_defaults.items():
-            if param == 'country_id':
-                country = kwargs.get('country')
-                if country:
-                    id = country['id']
-                    setattr(self, param, id)
-
-            elif param == 'season_id':
-                season = kwargs.get('season')
-                if season:
-                    id = season['id']
-                    setattr(self, param, id)
-
-            elif param == 'has_tables':
-                setattr(self, param, kwargs.get('tables', False))
-            else:
-                setattr(self, param, kwargs.get(param, default))
-
-    def __repr__(self) -> str:
-        return "League(ID={league_id}, Name={name!r}, Short Name={short_name}, Has Tables={has_tables})".format(
-            league_id=self.id,
-            name=self.name,
-            short_name=self.sname,
-            has_tables=self.has_tables)
 
 
 # noinspection PyUnresolvedReferences
@@ -276,40 +244,237 @@ class Match(BaseModel):
             'id': None,
             'league_id': None,
             'start_date': None,
-            'status': None,
-            'played': [],
-            'teams': {},
-            'update': {}
+            'end_date': None,
+            'start_offset': None,
+            'half_length': None,
+            'half_offset': None,
+            'status_id': None,
+            'minutes': None,
+            'playnow': None,
+            'injury': None,
+            'home': None,
+            'guest': None,
+            'available_mask': None,
+            'updated_actions': None,
+            'updated_events_play': None,
+            'updated': None
         }
 
         for (param, default) in self.param_defaults.items():
-            if param == 'league_id':
-                league = kwargs.get('league')
-                if league:
-                    id = league['id']
-                    setattr(self, param, id)
-
-            elif param == 'start_date':
-                date = kwargs.get('date')
-                if date:
-                    start_date = date['start']
-                    setattr(self, param, start_date)
-
-            elif param == 'teams':
-                data = {}
-                data['home'] = {'team': Team.new_from_json_dict(kwargs.get('teams')['home']['team']),
-                                'scores': kwargs.get('teams')['home']['scores'],
-                                'cards': kwargs.get('teams')['home']['cards']}
-                data['guest'] = {'team': Team.new_from_json_dict(kwargs.get('teams')['guest']['team']),
-                                 'scores': kwargs.get('teams')['guest']['scores'],
-                                 'cards': kwargs.get('teams')['guest']['cards']}
-
-                setattr(self, param, data)
-            else:
-                setattr(self, param, kwargs.get(param, default))
+            setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
-        return "Match(ID={match_id}, Home Team={home_team}, Guest Team={guest_team})".format(
-            match_id=self.id,
-            home_team=self.teams['home']['team'].name,
-            guest_team=self.teams['guest']['team'].name)
+        return "Match(ID={match_id})".format(
+            match_id=self.id)
+
+
+# # noinspection PyUnresolvedReferences
+# class Teams(BaseModel):
+#     """ A class representing teams structure. """
+#
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.param_defaults = {
+#             'countries': [],
+#             'teams': []
+#         }
+#
+#         for (param, default) in self.param_defaults.items():
+#             setattr(self, param, kwargs.get(param, default))
+#
+#     def __repr__(self) -> str:
+#         return "Teams(Country={country_name}, Count={number_of_teams})".format(
+#             country_name=self.countries.get(0, "Unknown"),
+#             number_of_teams=len(self.teams))
+#
+#
+# # noinspection PyUnresolvedReferences
+# class Team(BaseModel):
+#     """ A class representing team structure. """
+#
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.param_defaults = {
+#             'team_id': None,
+#             'country_id': None,
+#             'flag': None,
+#             'name': None,
+#             'update': None
+#         }
+#
+#         for (param, default) in self.param_defaults.items():
+#             if param == 'country_id':
+#                 country = kwargs.get('country')
+#                 if country:
+#                     team_id = country['country_id']
+#                     setattr(self, param, team_id)
+#             else:
+#                 setattr(self, param, kwargs.get(param, default))
+#
+#     def __repr__(self) -> str:
+#         return "Team(ID={team_id}, Name={name!r})".format(
+#             team_id=self.team_id,
+#             name=self.name)
+#
+#
+# # noinspection PyUnresolvedReferences
+# class Matches(BaseModel):
+#     """ A class representing matches structure. """
+#
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.param_defaults = {
+#             'countries': [],
+#             'seasons': [],
+#             'leagues': [],
+#             'matches': [],
+#             'range': {},
+#             'update': None
+#         }
+#
+#         for (param, default) in self.param_defaults.items():
+#             setattr(self, param, kwargs.get(param, default))
+#
+#     def __repr__(self) -> str:
+#         return "Matches(Count={number_of_matches}, Countries={number_of_countries}," \
+#                " Leagues={number_of_leagues})".format(
+#                 number_of_matches=len(self.matches),
+#                 number_of_countries=len(self.countries),
+#                 number_of_leagues=len(self.leagues))
+#
+#
+# # noinspection PyUnresolvedReferences
+# class Leagues(BaseModel):
+#     """ A class representing leagues structure. """
+#
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.param_defaults = {
+#             'country': None,
+#             'seasons': [],
+#             'leagues': []
+#         }
+#
+#         for (param, default) in self.param_defaults.items():
+#             setattr(self, param, kwargs.get(param, default))
+#
+#     def __repr__(self) -> str:
+#         return "Country={country_name}, Leagues(Count={number_of_leagues})".format(
+#             country_name=self.country.name,
+#             number_of_leagues=len(self.leagues))
+#
+#
+# # noinspection PyUnresolvedReferences
+# class Season(BaseModel):
+#     """ A class representing season structure. """
+#
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.param_defaults = {
+#             'season_id': None,
+#             'name': None,
+#             'sname': None,
+#             'update': None
+#         }
+#
+#         for (param, default) in self.param_defaults.items():
+#             setattr(self, param, kwargs.get(param, default))
+#
+#     def __repr__(self) -> str:
+#         return "Season(ID={season_id}, Name={name!r}, Short Name={short_name})".format(
+#             season_id=self.season_id,
+#             name=self.name,
+#             short_name=self.sname)
+#
+#
+# # noinspection PyUnresolvedReferences
+# class League(BaseModel):
+#     """ A class representing league structure. """
+#
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.param_defaults = {
+#             'league_id': None,
+#             'pid': None,
+#             'country_id': None,
+#             'season_id': None,
+#             'order': None,
+#             'has_tables': False,
+#             'name': None,
+#             'sname': None,
+#             'colors': {},
+#             'update': None
+#         }
+#
+#         for (param, default) in self.param_defaults.items():
+#             if param == 'country_id':
+#                 country = kwargs.get('country')
+#                 if country:
+#                     league_id = country['country_id']
+#                     setattr(self, param, league_id)
+#
+#             elif param == 'season_id':
+#                 season = kwargs.get('season')
+#                 if season:
+#                     league_id = season['season_id']
+#                     setattr(self, param, league_id)
+#
+#             elif param == 'has_tables':
+#                 setattr(self, param, kwargs.get('tables', False))
+#             else:
+#                 setattr(self, param, kwargs.get(param, default))
+#
+#     def __repr__(self) -> str:
+#         return "League(ID={league_id}, Name={name!r}, Short Name={short_name}, Has Tables={has_tables})".format(
+#             league_id=self.league_id,
+#             name=self.name,
+#             short_name=self.sname,
+#             has_tables=self.has_tables)
+#
+#
+# # noinspection PyUnresolvedReferences
+# class Match(BaseModel):
+#     """ A class representing match structure. """
+#
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         self.param_defaults = {
+#             'match_id': None,
+#             'league_id': None,
+#             'start_date': None,
+#             'status': None,
+#             'played': [],
+#             'teams': {},
+#             'update': {}
+#         }
+#
+#         for (param, default) in self.param_defaults.items():
+#             if param == 'league_id':
+#                 league = kwargs.get('league')
+#                 if league:
+#                     match_id = league['league_id']
+#                     setattr(self, param, match_id)
+#
+#             elif param == 'start_date':
+#                 date = kwargs.get('date')
+#                 if date:
+#                     start_date = date['start']
+#                     setattr(self, param, start_date)
+#
+#             elif param == 'teams':
+#                 data = {'home': {'team': Team.new_from_json_dict(kwargs.get('teams')['home']['team']),
+#                                  'scores': kwargs.get('teams')['home']['scores'],
+#                                  'cards': kwargs.get('teams')['home']['cards']},
+#                         'guest': {'team': Team.new_from_json_dict(kwargs.get('teams')['guest']['team']),
+#                                   'scores': kwargs.get('teams')['guest']['scores'],
+#                                   'cards': kwargs.get('teams')['guest']['cards']}}
+#
+#                 setattr(self, param, data)
+#             else:
+#                 setattr(self, param, kwargs.get(param, default))
+#
+#     def __repr__(self) -> str:
+#         return "Match(ID={match_id}, Home Team={home_team}, Guest Team={guest_team})".format(
+#             match_id=self.match_id,
+#             home_team=self.teams['home']['team'].name,
+#             guest_team=self.teams['guest']['team'].name)

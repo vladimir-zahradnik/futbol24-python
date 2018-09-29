@@ -1,15 +1,14 @@
 """A library that provides a Python interface to the Futbol24 API"""
 
 import json
+# static type-checking
+from typing import Dict
 from urllib.parse import urlparse, urlunparse, urlencode
 
 import requests
 
-from futbol24 import Country, Teams, Team, Matches, Season, League, Match, Leagues
+from futbol24.models import Status, Range, Country, Competition, League, Team, Match
 from futbol24.error import Futbol24Error
-
-# static type-checking
-from typing import Dict
 
 
 class Api(object):
@@ -17,7 +16,7 @@ class Api(object):
     _API_REALM = 'Futbol24 API'
 
     def __init__(self,
-                 input_encoding: str = None,
+                 input_encoding: str = 'utf-8',
                  request_headers: Dict[str, str] = None,
                  base_url: str = None,
                  user_agent: str = None,
@@ -67,7 +66,7 @@ class Api(object):
 
     def _initialize_user_agent(self, user_agent: str = None):
         if user_agent is None:
-            user_agent = 'Futbol24 1.9.1/26 (compatible)'
+            user_agent = 'Futbol24 2.30/61 (compatible)'
 
         self.set_user_agent(user_agent)
 
@@ -79,13 +78,15 @@ class Api(object):
         if not self._language:
             self._language = 'en'
 
-        self._cookies['F24-CC'] = self._language
-        self._cookies['f24'] = '5-038b0e6af9e7390bdfd37bd1c85e6790265c7940'
+        self._cookies['f24-asi'] = 'f24-asi=8926cbf3b3a61be64614147d136d389f3b05a64391e2046ae2491ad' \
+                                   '152ebd2be2409e754b9aea32dc43e954a008a2fe16d4dee014a9782cc0b542edc6bc55cdd'
 
         if add_compatibility_headers:
-            self._request_headers['F24_APP_VERSION'] = '1.9.1'
-            self._request_headers['XUSER_LANGUAGE'] = 'slk'
-            self._request_headers['F24_DEVICE_ID'] = 'androidTab'
+            self._request_headers['F24-App-Version'] = '2.30'
+            self._request_headers['F24-Device-Platform'] = 'android'
+            self._request_headers['F24-App-Id'] = '1'
+            self._request_headers['F24-Device-Language'] = 'slk'
+            self._request_headers['F24-Session-Auth'] = self._cookies['f24-asi']
 
     def set_user_agent(self, user_agent: str):
         """Override the default user agent.
@@ -95,95 +96,148 @@ class Api(object):
         """
         self._request_headers['User-Agent'] = user_agent
 
-    def get_countries(self, get_only_countries_with_stats_tables=False) -> [Country]:
+    def get_matches(self) -> str:
         # Build request parameters
         parameters = {}
 
-        if get_only_countries_with_stats_tables:
-            parameters['filter'] = 'tables'
-
-        url = '%s/countries' % self.base_url
-
+        url = '%s/v2/matches/day' % self.base_url
         resp = self._request_url(url, 'GET', data=parameters)
-        data = self._parse_and_check_http_response(resp)
+        data = self._parse_and_check_http_response(resp, self._input_encoding)
 
-        return [Country.new_from_json_dict(x) for x in data.get('countries', {}).get('list', '')]
+        # Date and time (in unix epoch format) for which data were sent
+        time = data.get('time', 0)
 
-    # noinspection PyUnresolvedReferences
-    def get_teams(self, country: Country):
-        try:
-            if int(country.id) < 0:
-                raise Futbol24Error({'message': "'country_id' must be a positive number"})
-        except ValueError or TypeError:
-            raise Futbol24Error({'message': "'country_id' must be an integer"})
+        # Status of last db updates
+        status = Status.new_from_json_dict(data.get('result', {}).get('status', {}))
 
-        # Build request parameters
-        parameters = {}
+        # Date range for matches
+        range = Range.new_from_json_dict(data.get('result', {}).get('range', {}))
 
-        url = '{0}/country/{1}/teams'.format(self.base_url, country.id)
+        # Countries
+        countries = list(map(lambda country: Country.new_from_json_dict(country),
+                             data.get('result', {}).get('countries', {}).get('list', [])))
 
-        resp = self._request_url(url, 'GET', data=parameters)
-        data = self._parse_and_check_http_response(resp)
+        # Competitions
+        competitions = list(map(lambda competition: Competition.new_from_json_dict(competition),
+                             data.get('result', {}).get('competitions', {}).get('list', [])))
 
-        teams = {'countries': [Country.new_from_json_dict(x) for x in data.get('countries', {}).get('list', '')],
-                 'teams': [Team.new_from_json_dict(x) for x in data.get('teams', {}).get('list', '')]}
+        # Leagues
+        leagues = list(map(lambda league: League.new_from_json_dict(league),
+                             data.get('result', {}).get('leagues', {}).get('list', [])))
 
-        return Teams.new_from_json_dict(teams)
+        # Teams
+        teams = list(map(lambda team: Team.new_from_json_dict(team),
+                             data.get('result', {}).get('teams', {}).get('list', [])))
 
-    # noinspection PyUnresolvedReferences
-    def get_leagues(self, country: Country, get_only_leagues_with_stats_tables=False):
-        try:
-            if int(country.id) < 0:
-                raise Futbol24Error({'message': "'country_id' must be a positive number"})
-        except ValueError or TypeError:
-            raise Futbol24Error({'message': "'country_id' must be an integer"})
+        # Matches
+        matches = list(map(lambda match: Match.new_from_json_dict(match),
+                             data.get('result', {}).get('matches', {}).get('list', [])))
 
-        # Build request parameters
-        parameters = {}
+        return resp.content.decode('utf-8')
 
-        if get_only_leagues_with_stats_tables:
-            parameters['filter'] = 'tables'
+    # def get_team_details(self, team_id: int) -> str:
+    #     # Build request parameters
+    #     parameters = {}
+    #
+    #     url = '{0}/v2/team/{1}'.format(self.base_url, team_id)
+    #     resp = self._request_url(url, 'GET', data=parameters)
+    #     data = self._parse_and_check_http_response(resp)
+    #
+    #     # Parse countries
+    #     data.get('countries', {})
+    #
+    #     # data = self._parse_and_check_http_response(resp)
+    #     return resp.content.decode('utf-8')
 
-        url = '{0}/country/{1}/leagues'.format(self.base_url, country.id)
-
-        resp = self._request_url(url, 'GET', data=parameters)
-        data = self._parse_and_check_http_response(resp)
-
-        leagues = {}
-
-        try:
-            country = data['countries']['list'][0]
-        except TypeError:
-            country = None
-
-        if country is not None:
-            leagues['country'] = country
-
-        leagues['seasons'] = [Season.new_from_json_dict(x) for x in data.get('seasons', {}).get('list', '')]
-        leagues['leagues'] = [League.new_from_json_dict(x) for x in data.get('leagues', {}).get('list', '')]
-
-        return Leagues.new_from_json_dict(leagues)
-
-    def get_updated_matches(self, update_id: int = None):
-        # Build request parameters
-        parameters = {}
-
-        if update_id:
-            url = '{0}/matches/update/{1}'.format(self.base_url, update_id)
-        else:
-            url = '%s/matches/update' % self.base_url
-
-        resp = self._request_url(url, 'GET', data=parameters)
-        data = self._parse_and_check_http_response(resp)
-
-        matches = {'countries': [Country.new_from_json_dict(x) for x in data.get('countries', {}).get('list', '')],
-                   'seasons': [Season.new_from_json_dict(x) for x in data.get('seasons', {}).get('list', '')],
-                   'leagues': [League.new_from_json_dict(x) for x in data.get('leagues', {}).get('list', '')],
-                   'matches': [Match.new_from_json_dict(x) for x in data.get('matches', {}).get('list', '')],
-                   'range': data.get('matches', {}).get('range', ''),
-                   'update': data.get('matches', {}).get('update', '')}
-
-        return Matches.new_from_json_dict(matches)
+    # def get_countries(self, get_only_countries_with_stats_tables=False) -> [Country]:
+    #     # Build request parameters
+    #     parameters = {}
+    #
+    #     if get_only_countries_with_stats_tables:
+    #         parameters['filter'] = 'tables'
+    #
+    #     url = '%s/countries' % self.base_url
+    #
+    #     resp = self._request_url(url, 'GET', data=parameters)
+    #     data = self._parse_and_check_http_response(resp)
+    #
+    #     return [Country.new_from_json_dict(x) for x in data.get('countries', {}).get('list', '')]
+    #
+    # # noinspection PyUnresolvedReferences
+    # def get_teams(self, country: Country):
+    #     try:
+    #         if int(country.country_id) < 0:
+    #             raise Futbol24Error({'message': "'country_id' must be a positive number"})
+    #     except ValueError or TypeError:
+    #         raise Futbol24Error({'message': "'country_id' must be an integer"})
+    #
+    #     # Build request parameters
+    #     parameters = {}
+    #
+    #     url = '{0}/country/{1}/teams'.format(self.base_url, country.country_id)
+    #
+    #     resp = self._request_url(url, 'GET', data=parameters)
+    #     data = self._parse_and_check_http_response(resp)
+    #
+    #     teams = {'countries': [Country.new_from_json_dict(x) for x in data.get('countries', {}).get('list', '')],
+    #              'teams': [Team.new_from_json_dict(x) for x in data.get('teams', {}).get('list', '')]}
+    #
+    #     return Teams.new_from_json_dict(teams)
+    #
+    # # noinspection PyUnresolvedReferences
+    # def get_leagues(self, country: Country, get_only_leagues_with_stats_tables=False):
+    #     try:
+    #         if int(country.country_id) < 0:
+    #             raise Futbol24Error({'message': "'country_id' must be a positive number"})
+    #     except ValueError or TypeError:
+    #         raise Futbol24Error({'message': "'country_id' must be an integer"})
+    #
+    #     # Build request parameters
+    #     parameters = {}
+    #
+    #     if get_only_leagues_with_stats_tables:
+    #         parameters['filter'] = 'tables'
+    #
+    #     url = '{0}/country/{1}/leagues'.format(self.base_url, country.country_id)
+    #
+    #     resp = self._request_url(url, 'GET', data=parameters)
+    #     data = self._parse_and_check_http_response(resp)
+    #
+    #     leagues = {}
+    #
+    #     try:
+    #         country = data['countries']['list'][0]
+    #     except TypeError:
+    #         country = None
+    #
+    #     if country is not None:
+    #         leagues['country'] = country
+    #
+    #     leagues['seasons'] = [Season.new_from_json_dict(x) for x in data.get('seasons', {}).get('list', '')]
+    #     leagues['leagues'] = [League.new_from_json_dict(x) for x in data.get('leagues', {}).get('list', '')]
+    #
+    #     return Leagues.new_from_json_dict(leagues)
+    #
+    # def get_updated_matches(self, update_id: int = None):
+    #     # Build request parameters
+    #     parameters = {}
+    #
+    #     if update_id:
+    #         url = '{0}/matches/update/{1}'.format(self.base_url, update_id)
+    #     else:
+    #         url = '%s/matches/update' % self.base_url
+    #
+    #     resp = self._request_url(url, 'GET', data=parameters)
+    #     data = self._parse_and_check_http_response(resp)
+    #
+    #     matches = {'countries': [Country.new_from_json_dict(x) for x in data.get('countries', {}).get('list', '')],
+    #                'seasons': [Season.new_from_json_dict(x) for x in data.get('seasons', {}).get('list', '')],
+    #                'leagues': [League.new_from_json_dict(x) for x in data.get('leagues', {}).get('list', '')],
+    #                'matches': [Match.new_from_json_dict(x) for x in data.get('matches', {}).get('list', '')],
+    #                'range': data.get('matches', {}).get('range', ''),
+    #                'update': data.get('matches', {}).get('update', '')}
+    #
+    #     return Matches.new_from_json_dict(matches)
 
     def _request_url(self, url, method, data: Dict[str, str] = None, json_data: str = None) -> requests.Response:
         """Request a url.
@@ -242,14 +296,14 @@ class Api(object):
         return urlunparse((scheme, netloc, path, params, query, fragment))
 
     @staticmethod
-    def _parse_and_check_http_response(response: requests.Response):
+    def _parse_and_check_http_response(response: requests.Response, encoding='utf-8'):
         """ Check http response returned from Futbol24, try to parse it as JSON and return
         an empty dictionary if there is any error.
         """
         if not response.ok:
             raise Futbol24Error({'message': "Error {0} {1}".format(response.status_code, response.reason)})
 
-        json_data = response.content.decode('utf-8')
+        json_data = response.content.decode(encoding)
         try:
             data = json.loads(json_data)
         except TypeError or json.JSONDecodeError:
