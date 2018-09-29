@@ -1,4 +1,6 @@
 import json
+from datetime import datetime
+from dateutil import tz
 
 # static type-checking
 from typing import Dict
@@ -85,7 +87,7 @@ class Status(BaseModel):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.param_defaults: Dict[str, int] = {
+        self.param_defaults: Dict[str, time.struct_time] = {
             'update_countries': None,
             'update_competitions': None,
             'update_seasons': None,
@@ -95,7 +97,7 @@ class Status(BaseModel):
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
 
     def __repr__(self) -> str:
         return "Status(update_keys)"
@@ -122,7 +124,10 @@ class Range(BaseModel):
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            if param == 'day' or param == 'start' or param == 'end':
+                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+            else:
+                setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
         return "Range({start_str} - {end_str})".format(
@@ -146,7 +151,10 @@ class Country(BaseModel):
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            if param == 'updated':
+                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+            else:
+                setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
         return "Country(ID={country_id}, Name={name!r}, Short Name={short_name})".format(
@@ -154,6 +162,15 @@ class Country(BaseModel):
             national=self.national,
             name=self.name,
             short_name=self.sname)
+
+    def __lt__(self, other):
+        return self.id < other.id
+
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __hash__(self):
+        return hash(self.id)
 
 
 # noinspection PyUnresolvedReferences
@@ -165,6 +182,7 @@ class Competition(BaseModel):
         self.param_defaults = {
             'id': None,
             'country_id': None,
+            'country': None,  # 'country_id' => Country
             'popularity': None,
             'name': None,
             'foreground': None,
@@ -175,12 +193,26 @@ class Competition(BaseModel):
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            if param == 'updated':
+                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+            else:
+                setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
-        return "Competition(ID={competition_id}, Name={name!r})".format(
+        return "Competition(ID={competition_id}, Name={name!r}, Country={country!r})".format(
             competition_id=self.id,
-            name=self.name)
+            name=self.name,
+            country=self.country.name
+        )
+
+    def __lt__(self, other):
+        return self.id < other.id
+
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __hash__(self):
+        return hash(self.id)
 
 
 # noinspection PyUnresolvedReferences
@@ -192,6 +224,7 @@ class League(BaseModel):
         self.param_defaults = {
             'id': None,
             'competition_id': None,
+            'competition': None,  # 'competition_id' => Competition
             'season_id': None,
             'name': None,
             'dname': None,
@@ -203,12 +236,25 @@ class League(BaseModel):
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            if param == 'updated':
+                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+            else:
+                setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
-        return "League(ID={league_id}, Name={name!r})".format(
+        return "League(ID={league_id}, Name={name!r}, Competition={competition!r})".format(
             league_id=self.id,
-            name=self.name)
+            name=self.name,
+            competition=self.competition.name)
+
+    def __lt__(self, other):
+        return self.id < other.id
+
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __hash__(self):
+        return hash(self.id)
 
 
 # noinspection PyUnresolvedReferences
@@ -220,18 +266,32 @@ class Team(BaseModel):
         self.param_defaults = {
             'id': None,
             'country_id': None,
+            'country': None,  # 'country_id' => Country
             'name': None,
             'sname': None,
             'updated': None
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            if param == 'updated':
+                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+            else:
+                setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
-        return "Team(ID={team_id}, Name={name!r})".format(
+        return "Team(ID={team_id}, Name={name!r}, Country={country!r})".format(
             team_id=self.id,
-            name=self.name)
+            name=self.name,
+            country=self.country.name)
+
+    def __lt__(self, other):
+        return self.id < other.id
+
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __hash__(self):
+        return hash(self.id)
 
 
 # noinspection PyUnresolvedReferences
@@ -243,6 +303,7 @@ class Match(BaseModel):
         self.param_defaults = {
             'id': None,
             'league_id': None,
+            'league': None,  # 'league_id' => League
             'start_date': None,
             'end_date': None,
             'start_offset': None,
@@ -261,12 +322,58 @@ class Match(BaseModel):
         }
 
         for (param, default) in self.param_defaults.items():
-            setattr(self, param, kwargs.get(param, default))
+            if param == 'start_date' or param == 'end_date'\
+                    or param == 'updated' or param == 'updated_actions' or param == 'updated_events_play':
+
+                if kwargs.get(param, default) is not None:
+                    setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+                else:
+                    setattr(self, param, None)
+            else:
+                setattr(self, param, kwargs.get(param, default))
 
     def __repr__(self) -> str:
-        return "Match(ID={match_id})".format(
-            match_id=self.id)
+        return "Match(ID={match_id}, {home_team} vs. {guest_team})".format(
+            match_id=self.id,
+            home_team=self.home.get('team').name,
+            guest_team=self.guest.get('team').name)
 
+    def __lt__(self, other):
+        return self.id < other.id
+
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __hash__(self):
+        return hash(self.id)
+
+
+class Matches(object):
+    """ Wrapper around list of matches to filter the results. """
+
+    def __init__(self, matches: [Match]):
+        self.matches = matches
+
+    @property
+    def now_playing(self):
+        return list(filter(lambda match: match.playnow is True, self.matches))
+
+    @property
+    def finished(self):
+        return list(filter(lambda match: match.playnow is False and match.end_date is not None, self.matches))
+
+    @property
+    def to_be_played(self):
+        return list(filter(lambda match: match.playnow is False and match.end_date is None, self.matches))
+
+    @property
+    def all(self):
+        return self.matches
+
+    def __str__(self) -> str:
+        """ Returns a string representation of model."""
+        return "Matches(Total={total})".format(
+            total=len(self.matches))
 
 # # noinspection PyUnresolvedReferences
 # class Teams(BaseModel):

@@ -7,7 +7,7 @@ from urllib.parse import urlparse, urlunparse, urlencode
 
 import requests
 
-from futbol24.models import Status, Range, Country, Competition, League, Team, Match
+from futbol24.models import Status, Range, Country, Competition, League, Team, Match, Matches
 from futbol24.error import Futbol24Error
 
 
@@ -96,7 +96,7 @@ class Api(object):
         """
         self._request_headers['User-Agent'] = user_agent
 
-    def get_matches(self) -> str:
+    def get_matches(self) -> Matches:
         # Build request parameters
         parameters = {}
 
@@ -114,26 +114,66 @@ class Api(object):
         range = Range.new_from_json_dict(data.get('result', {}).get('range', {}))
 
         # Countries
-        countries = list(map(lambda country: Country.new_from_json_dict(country),
-                             data.get('result', {}).get('countries', {}).get('list', [])))
+        countries = list(map(Country.new_from_json_dict, data.get('result', {}).get('countries', {}).get('list', [])))
 
         # Competitions
-        competitions = list(map(lambda competition: Competition.new_from_json_dict(competition),
-                             data.get('result', {}).get('competitions', {}).get('list', [])))
+        # noinspection PyUnresolvedReferences
+        def _map_competitions(competition: dict):
+            competition: Competition = Competition.new_from_json_dict(competition)
+            country = list(filter(lambda country: country.id == competition.country_id, countries))[0]
+            delattr(competition, 'country_id')
+            setattr(competition, 'country', country)
+
+            return competition
+
+        competitions = list(map(_map_competitions, data.get('result', {}).get('competitions', {}).get('list', [])))
 
         # Leagues
-        leagues = list(map(lambda league: League.new_from_json_dict(league),
-                             data.get('result', {}).get('leagues', {}).get('list', [])))
+        # noinspection PyUnresolvedReferences
+        def _map_leagues(league: dict):
+            league: League = League.new_from_json_dict(league)
+            competition = list(filter(lambda competition: competition.id == league.competition_id, competitions))[0]
+            delattr(league, 'competition_id')
+            setattr(league, 'competition', competition)
+
+            return league
+
+        leagues = list(map(_map_leagues, data.get('result', {}).get('leagues', {}).get('list', [])))
 
         # Teams
-        teams = list(map(lambda team: Team.new_from_json_dict(team),
-                             data.get('result', {}).get('teams', {}).get('list', [])))
+        # noinspection PyUnresolvedReferences
+        def _map_teams(team: dict):
+            team: Team = Team.new_from_json_dict(team)
+            country = list(filter(lambda country: country.id == team.country_id, countries))[0]
+            delattr(team, 'country_id')
+            setattr(team, 'country', country)
+
+            return team
+
+        teams = list(map(_map_teams, data.get('result', {}).get('teams', {}).get('list', [])))
 
         # Matches
-        matches = list(map(lambda match: Match.new_from_json_dict(match),
-                             data.get('result', {}).get('matches', {}).get('list', [])))
+        # noinspection PyUnresolvedReferences
+        def _map_matches(match: dict):
+            match: Match = Match.new_from_json_dict(match)
+            league = list(filter(lambda league: league.id == match.league_id, leagues))[0]
+            delattr(match, 'league_id')
+            setattr(match, 'league', league)
 
-        return resp.content.decode('utf-8')
+            home_team = list(filter(lambda team: team.id == match.home.get('team_id', -1), teams))[0]
+            del match.home['team_id']
+            match.home['team'] = home_team
+
+            guest_team = list(filter(lambda team: team.id == match.guest.get('team_id', -1), teams))[0]
+            del match.guest['team_id']
+            match.guest['team'] = guest_team
+
+            return match
+
+
+        matches = list(map(_map_matches, data.get('result', {}).get('matches', {}).get('list', [])))
+
+        return Matches(matches)
 
     # def get_team_details(self, team_id: int) -> str:
     #     # Build request parameters

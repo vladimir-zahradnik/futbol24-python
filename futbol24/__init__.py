@@ -18,7 +18,8 @@ from .models import (
     Competition,
     League,
     Team,
-    Match
+    Match,
+    Matches
     # Teams,
     # Team,
     # Matches,
