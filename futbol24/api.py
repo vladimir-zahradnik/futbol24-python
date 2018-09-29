@@ -8,33 +8,29 @@ import requests
 from futbol24 import Country, Teams, Team, Matches, Season, League, Match, Leagues
 from futbol24.error import Futbol24Error
 
-# A singleton representing a lazily instantiated FileCache.
-DEFAULT_CACHE = object()
+# static type-checking
+from typing import Dict
 
 
 class Api(object):
     """A python interface into the Futbol24 API"""
-
-    DEFAULT_CACHE_TIMEOUT = 60  # cache for 1 minute
     _API_REALM = 'Futbol24 API'
 
     def __init__(self,
-                 input_encoding=None,
-                 request_headers=None,
-                 cache=DEFAULT_CACHE,
-                 base_url=None,
-                 user_agent=None,
+                 input_encoding: str = None,
+                 request_headers: Dict[str, str] = None,
+                 base_url: str = None,
+                 user_agent: str = None,
                  add_compat_f24_headers=False,
                  debug_http=False,
-                 timeout=None,
-                 language=None):
+                 timeout: int = None,
+                 language: str = None):
 
-        self._cache_timeout = Api.DEFAULT_CACHE_TIMEOUT
-        self._input_encoding = input_encoding
-        self._debug_http = debug_http
-        self._timeout = timeout
-        self._language = language
-        self._cookies = {}
+        self._input_encoding: str = input_encoding
+        self._debug_http: bool = debug_http
+        self._timeout: int = timeout
+        self._language: str = language
+        self._cookies: Dict[str, str] = {}
 
         self._initialize_default_parameters()
         self._initialize_request_headers(request_headers)
@@ -61,7 +57,7 @@ class Api(object):
     def _initialize_default_parameters(self):
         self._default_params = {}
 
-    def _initialize_request_headers(self, request_headers):
+    def _initialize_request_headers(self, request_headers: Dict[str, str]):
         if request_headers:
             self._request_headers = request_headers
         else:
@@ -69,7 +65,7 @@ class Api(object):
 
         self._request_headers['Accept'] = 'application/json'
 
-    def _initialize_user_agent(self, user_agent=None):
+    def _initialize_user_agent(self, user_agent: str = None):
         if user_agent is None:
             user_agent = 'Futbol24 1.9.1/26 (compatible)'
 
@@ -91,7 +87,7 @@ class Api(object):
             self._request_headers['XUSER_LANGUAGE'] = 'slk'
             self._request_headers['F24_DEVICE_ID'] = 'androidTab'
 
-    def set_user_agent(self, user_agent):
+    def set_user_agent(self, user_agent: str):
         """Override the default user agent.
         Args:
           user_agent:
@@ -99,7 +95,7 @@ class Api(object):
         """
         self._request_headers['User-Agent'] = user_agent
 
-    def get_countries(self, get_only_countries_with_stats_tables=False):
+    def get_countries(self, get_only_countries_with_stats_tables=False) -> [Country]:
         # Build request parameters
         parameters = {}
 
@@ -113,7 +109,8 @@ class Api(object):
 
         return [Country.new_from_json_dict(x) for x in data.get('countries', {}).get('list', '')]
 
-    def get_teams(self, country):
+    # noinspection PyUnresolvedReferences
+    def get_teams(self, country: Country):
         try:
             if int(country.id) < 0:
                 raise Futbol24Error({'message': "'country_id' must be a positive number"})
@@ -133,7 +130,8 @@ class Api(object):
 
         return Teams.new_from_json_dict(teams)
 
-    def get_leagues(self, country, get_only_leagues_with_stats_tables=False):
+    # noinspection PyUnresolvedReferences
+    def get_leagues(self, country: Country, get_only_leagues_with_stats_tables=False):
         try:
             if int(country.id) < 0:
                 raise Futbol24Error({'message': "'country_id' must be a positive number"})
@@ -155,7 +153,7 @@ class Api(object):
 
         try:
             country = data['countries']['list'][0]
-        except:
+        except TypeError:
             country = None
 
         if country is not None:
@@ -166,7 +164,7 @@ class Api(object):
 
         return Leagues.new_from_json_dict(leagues)
 
-    def get_updated_matches(self, update_id=None):
+    def get_updated_matches(self, update_id: int = None):
         # Build request parameters
         parameters = {}
 
@@ -187,8 +185,7 @@ class Api(object):
 
         return Matches.new_from_json_dict(matches)
 
-
-    def _request_url(self, url, method, data=None, json=None):
+    def _request_url(self, url, method, data: Dict[str, str] = None, json_data: str = None) -> requests.Response:
         """Request a url.
         Args:
             url:
@@ -200,15 +197,14 @@ class Api(object):
         Returns:
             A JSON object.
         """
-
         if method == 'POST':
             if data:
                 resp = requests.post(url, headers=self._request_headers, cookies=self._cookies,
                                      data=data, timeout=self._timeout)
-            elif json:
+            elif json_data:
                 self._request_headers['Content-Type'] = 'application/json'
                 resp = requests.post(url, headers=self._request_headers, cookies=self._cookies,
-                                     json=json, timeout=self._timeout)
+                                     json=json_data, timeout=self._timeout)
             else:
                 resp = 0  # POST request, but without data or json
 
@@ -221,7 +217,7 @@ class Api(object):
 
         return resp
 
-    def _build_url(self, url, path_elements=None, extra_params=None):
+    def _build_url(self, url: str, path_elements: [str] = None, extra_params: [str] = None):
         # Break url into constituent parts
         (scheme, netloc, path, params, query, fragment) = urlparse(url)
 
@@ -245,7 +241,8 @@ class Api(object):
         # Return the rebuilt URL
         return urlunparse((scheme, netloc, path, params, query, fragment))
 
-    def _parse_and_check_http_response(self, response):
+    @staticmethod
+    def _parse_and_check_http_response(response: requests.Response):
         """ Check http response returned from Futbol24, try to parse it as JSON and return
         an empty dictionary if there is any error.
         """
@@ -255,13 +252,13 @@ class Api(object):
         json_data = response.content.decode('utf-8')
         try:
             data = json.loads(json_data)
-
-        except:
+        except TypeError or json.JSONDecodeError:
             raise Futbol24Error({'message': "Invalid JSON content"})
 
         return data
 
-    def _encode_parameters(self, parameters):
+    @staticmethod
+    def _encode_parameters(parameters: Dict[str, str]) -> str or None:
         """Return a string in key=value&key=value form.
         Values of None are not included in the output string.
         Args:

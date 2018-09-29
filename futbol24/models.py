@@ -1,5 +1,4 @@
 import json
-from calendar import timegm
 
 try:
     from rfc822 import parsedate
@@ -13,18 +12,18 @@ class BaseModel(object):
     def __init__(self, **kwargs):
         self.param_defaults = {}
 
-    def __str__(self):
+    def __str__(self) -> str:
         """ Returns a string representation of model. By default
         this is the same as AsJsonString(). """
         return self.as_json_string()
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
         return other and self.as_dict() == other.as_dict()
 
-    def __ne__(self, other):
+    def __ne__(self, other) -> bool:
         return not self.__eq__(other)
 
-    def as_json_string(self):
+    def as_json_string(self) -> str:
         """ Returns the model as a JSON string based on key/value
         pairs returned from the as_dict() method. """
         return json.dumps(self.as_dict(), sort_keys=True)
@@ -76,6 +75,7 @@ class BaseModel(object):
         return cls(**data)
 
 
+# noinspection PyUnresolvedReferences
 class Country(BaseModel):
     """ A class representing country structure. """
 
@@ -95,13 +95,15 @@ class Country(BaseModel):
         for (param, default) in self.param_defaults.items():
             setattr(self, param, kwargs.get(param, default))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "Country(ID={country_id}, Name={name!r}, Short Name={short_name}, Teams={number_of_teams})".format(
             country_id=self.id,
             name=self.name,
             short_name=self.sname,
             number_of_teams=self.teams)
 
+
+# noinspection PyUnresolvedReferences
 class Teams(BaseModel):
     """ A class representing teams structure. """
 
@@ -115,11 +117,13 @@ class Teams(BaseModel):
         for (param, default) in self.param_defaults.items():
             setattr(self, param, kwargs.get(param, default))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "Teams(Country={country_name}, Count={number_of_teams})".format(
             country_name=self.countries.get(0, "Unknown"),
             number_of_teams=len(self.teams))
 
+
+# noinspection PyUnresolvedReferences
 class Team(BaseModel):
     """ A class representing team structure. """
 
@@ -142,11 +146,13 @@ class Team(BaseModel):
             else:
                 setattr(self, param, kwargs.get(param, default))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "Team(ID={team_id}, Name={name!r})".format(
             team_id=self.id,
             name=self.name)
 
+
+# noinspection PyUnresolvedReferences
 class Matches(BaseModel):
     """ A class representing matches structure. """
 
@@ -164,12 +170,14 @@ class Matches(BaseModel):
         for (param, default) in self.param_defaults.items():
             setattr(self, param, kwargs.get(param, default))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "Matches(Count={number_of_matches}, Countries={number_of_countries}, Leagues={number_of_leagues})".format(
             number_of_matches=len(self.matches),
             number_of_countries=len(self.countries),
             number_of_leagues=len(self.leagues))
 
+
+# noinspection PyUnresolvedReferences
 class Leagues(BaseModel):
     """ A class representing leagues structure. """
 
@@ -184,12 +192,13 @@ class Leagues(BaseModel):
         for (param, default) in self.param_defaults.items():
             setattr(self, param, kwargs.get(param, default))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "Country={country_name}, Leagues(Count={number_of_leagues})".format(
             country_name=self.country.name,
             number_of_leagues=len(self.leagues))
 
 
+# noinspection PyUnresolvedReferences
 class Season(BaseModel):
     """ A class representing season structure. """
 
@@ -205,12 +214,14 @@ class Season(BaseModel):
         for (param, default) in self.param_defaults.items():
             setattr(self, param, kwargs.get(param, default))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "Season(ID={season_id}, Name={name!r}, Short Name={short_name})".format(
             season_id=self.id,
             name=self.name,
             short_name=self.sname)
 
+
+# noinspection PyUnresolvedReferences
 class League(BaseModel):
     """ A class representing league structure. """
 
@@ -247,13 +258,15 @@ class League(BaseModel):
             else:
                 setattr(self, param, kwargs.get(param, default))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "League(ID={league_id}, Name={name!r}, Short Name={short_name}, Has Tables={has_tables})".format(
             league_id=self.id,
             name=self.name,
             short_name=self.sname,
             has_tables=self.has_tables)
 
+
+# noinspection PyUnresolvedReferences
 class Match(BaseModel):
     """ A class representing match structure. """
 
@@ -285,17 +298,17 @@ class Match(BaseModel):
             elif param == 'teams':
                 data = {}
                 data['home'] = {'team': Team.new_from_json_dict(kwargs.get('teams')['home']['team']),
-                        'scores': kwargs.get('teams')['home']['scores'],
-                        'cards': kwargs.get('teams')['home']['cards']}
+                                'scores': kwargs.get('teams')['home']['scores'],
+                                'cards': kwargs.get('teams')['home']['cards']}
                 data['guest'] = {'team': Team.new_from_json_dict(kwargs.get('teams')['guest']['team']),
-                        'scores': kwargs.get('teams')['guest']['scores'],
-                        'cards': kwargs.get('teams')['guest']['cards']}
+                                 'scores': kwargs.get('teams')['guest']['scores'],
+                                 'cards': kwargs.get('teams')['guest']['cards']}
 
                 setattr(self, param, data)
             else:
                 setattr(self, param, kwargs.get(param, default))
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "Match(ID={match_id}, Home Team={home_team}, Guest Team={guest_team})".format(
             match_id=self.id,
             home_team=self.teams['home']['team'].name,
