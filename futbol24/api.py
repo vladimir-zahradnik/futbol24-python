@@ -146,7 +146,7 @@ class Api(object):
         return teams
 
     # noinspection PyUnresolvedReferences
-    def get_matches_for_team(self, team: Team) -> Matches:
+    def get_team_matches(self, team: Team) -> Matches:
         # Build request parameters
         parameters = {}
 
@@ -172,6 +172,22 @@ class Api(object):
                            data.get('result', {}).get('matches', {}).get('list', [])))
 
         return Matches(matches)
+
+    # noinspection PyUnresolvedReferences
+    def get_team_info(self, team: Team) -> str:
+        # Build request parameters
+        parameters = {}
+
+        # No API available, we need to scrape the data from the web
+        url = '{base_url}/team/{country}/{team_name}/'.format(base_url='https://www.futbol24.com',
+                                                              country=self._replace_characters(team.country.name),
+                                                              team_name=self._replace_characters(team.name))
+        #resp = self._request_url(url, 'GET', data=parameters)
+        #data = self._parse_team_info_http_response(resp, self._input_encoding)
+
+        #return data
+
+        return url
 
     def get_daily_matches(self) -> Matches:
         # Build request parameters
@@ -446,3 +462,128 @@ class Api(object):
         match.guest['team'] = guest_team
 
         return match
+
+    @staticmethod
+    def _parse_team_info_http_response(response: requests.Response, encoding='utf-8'):
+        """ Parse team info http response returned from Futbol24. It is returned as html which
+        needs to be parsed.
+        """
+        if not response.ok:
+            raise Futbol24Error({'message': "Error {0} {1}".format(response.status_code, response.reason)})
+
+        html_data = response.content.decode(encoding)
+        # TODO: Parse info
+
+        return html_data
+
+    @staticmethod
+    def _replace_characters(text: str) -> str:
+        translation_table = {
+            ' ' : '-',
+            '/': '-',
+            '\\': '-',
+            '–': '-',
+            '(' : '',
+            ')': '',
+            '.': '',
+            '\'': '',
+            'º': '',
+            '°': '',
+            '‘': '',
+            '’': '',
+            '&': '',
+            'á': 'a',
+            'à': 'a',
+            'ä': 'a',
+            'â': 'a',
+            'ã': 'a',
+            'å': 'a',
+            'ă': 'a',
+            'ą': 'a',
+            'Å': 'A',
+            'Á': 'A',
+            'Ä': 'A',
+            'æ': 'ae',
+            'ć': 'c',
+            'č': 'c',
+            'ç': 'c',
+            'Ç': 'C',
+            'Č': 'C',
+            'đ': 'd',
+            'ď': 'd',
+            'ð': 'd',
+            'Ď': 'D',
+            'ë': 'e',
+            'è': 'e',
+            'é': 'e',
+            'ê': 'e',
+            'ě': 'e',
+            'ė': 'e',
+            'ę': 'e',
+            'ə': '',
+            'É': 'e',
+            'ğ': 'g',
+            'ħ': 'h',
+            'í': 'i',
+            'Í': 'I',
+            'ī': 'i',
+            'ı': 'i',
+            'î': 'i',
+            'ï': 'i',
+            'ì': 'i',
+            'İ': 'I',
+            'Î': 'I',
+            'ĺ': 'l',
+            'ľ': 'l',
+            'ł': 'l',
+            'Ł': 'L',
+            'ň': 'n',
+            'ń': 'n',
+            'ñ': 'n',
+            'ņ': 'n',
+            'Ñ': 'N',
+            'ø': 'o',
+            'ö': 'o',
+            'Ö': 'O',
+            'ó': 'o',
+            'õ': 'o',
+            'ô': 'o',
+            'ő': 'o',
+            'Ø': 'O',
+            'Ó': 'O',
+            'œ': 'oe',
+            'ŕ': 'r',
+            'ř': 'r',
+            'Ř': 'R',
+            'ś': 's',
+            'š': 's',
+            'ş': 's',
+            'ș': 's',
+            'Ș': 'S',
+            'Ş': 'S',
+            'Ś': 'S',
+            'Š': 'S',
+            'ß': 'ss',
+            'ť': 't',
+            'ţ': 't',
+            'ț': 't',
+            'ü': 'u',
+            'ú': 'u',
+            'ů': 'u',
+            'Ü': 'U',
+            'ū': 'u',
+            'Ú': 'U',
+            'ų': 'u',
+            'ý': 'y',
+            'ž': 'z',
+            'ż': 'z',
+            'ź': 'z',
+            'Ž': 'Z',
+            'Ż': 'Z'
+
+        }
+
+        for char, repl in translation_table.items():
+            text = text.replace(char, repl)
+
+        return text
