@@ -7,7 +7,7 @@ from urllib.parse import urlparse, urlunparse, urlencode
 
 import requests
 
-from futbol24.models import Status, Range, Country, Competition, League, Team, Match, Matches
+from futbol24.models import Country, Competition, League, Team, Match, Matches
 from futbol24.error import Futbol24Error
 
 
@@ -96,7 +96,84 @@ class Api(object):
         """
         self._request_headers['User-Agent'] = user_agent
 
-    def get_matches(self) -> Matches:
+    def get_countries(self) -> [Country]:
+        # Build request parameters
+        parameters = {}
+
+        url = '%s/v2/countries' % self.base_url
+        resp = self._request_url(url, 'GET', data=parameters)
+        data = self._parse_and_check_http_response(resp, self._input_encoding)
+
+        # Date and time (in unix epoch format) for which data were sent
+        # time = data.get('time', 0)
+
+        countries = list(map(Country.new_from_json_dict, data.get('result', {}).get('countries', {}).get('list', [])))
+
+        return countries
+
+    def get_competitions(self) -> [Competition]:
+        # Build request parameters
+        parameters = {}
+
+        url = '%s/v2/competitions' % self.base_url
+        resp = self._request_url(url, 'GET', data=parameters)
+        data = self._parse_and_check_http_response(resp, self._input_encoding)
+
+        # Date and time (in unix epoch format) for which data were sent
+        # time = data.get('time', 0)
+
+        countries = list(map(Country.new_from_json_dict, data.get('result', {}).get('countries', {}).get('list', [])))
+        competitions = list(map(lambda competition: self._map_competitions(competition, countries),
+                                data.get('result', {}).get('competitions', {}).get('list', [])))
+
+        return competitions
+
+    def get_teams(self) -> [Team]:
+        # Build request parameters
+        parameters = {}
+
+        url = '%s/v2/teams' % self.base_url
+        resp = self._request_url(url, 'GET', data=parameters)
+        data = self._parse_and_check_http_response(resp, self._input_encoding)
+
+        # Date and time (in unix epoch format) for which data were sent
+        # time = data.get('time', 0)
+
+        countries = list(map(Country.new_from_json_dict, data.get('result', {}).get('countries', {}).get('list', [])))
+        teams = list(map(lambda team: self._map_teams(team, countries),
+                         data.get('result', {}).get('teams', {}).get('list', [])))
+
+        return teams
+
+    # noinspection PyUnresolvedReferences
+    def get_matches_for_team(self, team: Team) -> Matches:
+        # Build request parameters
+        parameters = {}
+
+        url = '{base_url}/v2/team/{team_id}/matches'.format(base_url=self.base_url, team_id=team.id)
+        resp = self._request_url(url, 'GET', data=parameters)
+        data = self._parse_and_check_http_response(resp, self._input_encoding)
+
+        # Date and time (in unix epoch format) for which data were sent
+        # time = data.get('time', 0)
+
+        countries = list(map(Country.new_from_json_dict, data.get('result', {}).get('countries', {}).get('list', [])))
+
+        competitions = list(map(lambda competition: self._map_competitions(competition, countries),
+                                data.get('result', {}).get('competitions', {}).get('list', [])))
+
+        leagues = list(map(lambda league: self._map_leagues(league, competitions),
+                           data.get('result', {}).get('leagues', {}).get('list', [])))
+
+        teams = list(map(lambda team: self._map_teams(team, countries),
+                         data.get('result', {}).get('teams', {}).get('list', [])))
+
+        matches = list(map(lambda match: self._map_matches(match, leagues, teams),
+                           data.get('result', {}).get('matches', {}).get('list', [])))
+
+        return Matches(matches)
+
+    def get_daily_matches(self) -> Matches:
         # Build request parameters
         parameters = {}
 
@@ -105,73 +182,27 @@ class Api(object):
         data = self._parse_and_check_http_response(resp, self._input_encoding)
 
         # Date and time (in unix epoch format) for which data were sent
-        time = data.get('time', 0)
+        # time = data.get('time', 0)
 
         # Status of last db updates
-        status = Status.new_from_json_dict(data.get('result', {}).get('status', {}))
+        # status = Status.new_from_json_dict(data.get('result', {}).get('status', {}))
 
         # Date range for matches
-        range = Range.new_from_json_dict(data.get('result', {}).get('range', {}))
+        # range = Range.new_from_json_dict(data.get('result', {}).get('range', {}))
 
-        # Countries
         countries = list(map(Country.new_from_json_dict, data.get('result', {}).get('countries', {}).get('list', [])))
 
-        # Competitions
-        # noinspection PyUnresolvedReferences
-        def _map_competitions(competition: dict):
-            competition: Competition = Competition.new_from_json_dict(competition)
-            country = list(filter(lambda country: country.id == competition.country_id, countries))[0]
-            delattr(competition, 'country_id')
-            setattr(competition, 'country', country)
+        competitions = list(map(lambda competition: self._map_competitions(competition, countries),
+                                data.get('result', {}).get('competitions', {}).get('list', [])))
 
-            return competition
+        leagues = list(map(lambda league: self._map_leagues(league, competitions),
+                           data.get('result', {}).get('leagues', {}).get('list', [])))
 
-        competitions = list(map(_map_competitions, data.get('result', {}).get('competitions', {}).get('list', [])))
+        teams = list(map(lambda team: self._map_teams(team, countries),
+                         data.get('result', {}).get('teams', {}).get('list', [])))
 
-        # Leagues
-        # noinspection PyUnresolvedReferences
-        def _map_leagues(league: dict):
-            league: League = League.new_from_json_dict(league)
-            competition = list(filter(lambda competition: competition.id == league.competition_id, competitions))[0]
-            delattr(league, 'competition_id')
-            setattr(league, 'competition', competition)
-
-            return league
-
-        leagues = list(map(_map_leagues, data.get('result', {}).get('leagues', {}).get('list', [])))
-
-        # Teams
-        # noinspection PyUnresolvedReferences
-        def _map_teams(team: dict):
-            team: Team = Team.new_from_json_dict(team)
-            country = list(filter(lambda country: country.id == team.country_id, countries))[0]
-            delattr(team, 'country_id')
-            setattr(team, 'country', country)
-
-            return team
-
-        teams = list(map(_map_teams, data.get('result', {}).get('teams', {}).get('list', [])))
-
-        # Matches
-        # noinspection PyUnresolvedReferences
-        def _map_matches(match: dict):
-            match: Match = Match.new_from_json_dict(match)
-            league = list(filter(lambda league: league.id == match.league_id, leagues))[0]
-            delattr(match, 'league_id')
-            setattr(match, 'league', league)
-
-            home_team = list(filter(lambda team: team.id == match.home.get('team_id', -1), teams))[0]
-            del match.home['team_id']
-            match.home['team'] = home_team
-
-            guest_team = list(filter(lambda team: team.id == match.guest.get('team_id', -1), teams))[0]
-            del match.guest['team_id']
-            match.guest['team'] = guest_team
-
-            return match
-
-
-        matches = list(map(_map_matches, data.get('result', {}).get('matches', {}).get('list', [])))
+        matches = list(map(lambda match: self._map_matches(match, leagues, teams),
+                           data.get('result', {}).get('matches', {}).get('list', [])))
 
         return Matches(matches)
 
@@ -367,3 +398,51 @@ class Api(object):
             raise Futbol24Error("`parameters` must be a dict.")
         else:
             return urlencode(dict((k, v) for k, v in parameters.items() if v is not None))
+
+    # noinspection PyUnresolvedReferences
+    @staticmethod
+    def _map_competitions(competition: Dict[str, str], countries: [Country]):
+        competition: Competition = Competition.new_from_json_dict(competition)
+        competition_country = list(filter(lambda country: country.id == competition.country_id, countries))[0]
+        delattr(competition, 'country_id')
+        setattr(competition, 'country', competition_country)
+
+        return competition
+
+    # noinspection PyUnresolvedReferences
+    @staticmethod
+    def _map_leagues(league: Dict[str, str], competitions: [Competition]):
+        league: League = League.new_from_json_dict(league)
+        league_competition = list(filter(lambda competition: competition.id == league.competition_id, competitions))[0]
+        delattr(league, 'competition_id')
+        setattr(league, 'competition', league_competition)
+
+        return league
+
+    # noinspection PyUnresolvedReferences
+    @staticmethod
+    def _map_teams(team: Dict[str, str], countries: [Country]):
+        team: Team = Team.new_from_json_dict(team)
+        team_country = list(filter(lambda country: country.id == team.country_id, countries))[0]
+        delattr(team, 'country_id')
+        setattr(team, 'country', team_country)
+
+        return team
+
+    # noinspection PyUnresolvedReferences
+    @staticmethod
+    def _map_matches(match: Dict[str, str], leagues: [League], teams: [Team]):
+        match: Match = Match.new_from_json_dict(match)
+        match_league = list(filter(lambda league: league.id == match.league_id, leagues))[0]
+        delattr(match, 'league_id')
+        setattr(match, 'league', match_league)
+
+        home_team = list(filter(lambda team: team.id == match.home.get('team_id', -1), teams))[0]
+        del match.home['team_id']
+        match.home['team'] = home_team
+
+        guest_team = list(filter(lambda team: team.id == match.guest.get('team_id', -1), teams))[0]
+        del match.guest['team_id']
+        match.guest['team'] = guest_team
+
+        return match

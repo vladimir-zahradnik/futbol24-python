@@ -152,7 +152,11 @@ class Country(BaseModel):
 
         for (param, default) in self.param_defaults.items():
             if param == 'updated':
-                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+                timestamp = kwargs.get(param, default)
+                if (timestamp is not None):
+                    setattr(self, param, datetime.fromtimestamp(timestamp, tz.tzlocal()))
+                else:
+                    setattr(self, param, None)
             else:
                 setattr(self, param, kwargs.get(param, default))
 
@@ -194,7 +198,11 @@ class Competition(BaseModel):
 
         for (param, default) in self.param_defaults.items():
             if param == 'updated':
-                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+                timestamp = kwargs.get(param, default)
+                if (timestamp is not None):
+                    setattr(self, param, datetime.fromtimestamp(timestamp, tz.tzlocal()))
+                else:
+                    setattr(self, param, None)
             else:
                 setattr(self, param, kwargs.get(param, default))
 
@@ -237,7 +245,11 @@ class League(BaseModel):
 
         for (param, default) in self.param_defaults.items():
             if param == 'updated':
-                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+                timestamp = kwargs.get(param, default)
+                if (timestamp is not None):
+                    setattr(self, param, datetime.fromtimestamp(timestamp, tz.tzlocal()))
+                else:
+                    setattr(self, param, None)
             else:
                 setattr(self, param, kwargs.get(param, default))
 
@@ -269,12 +281,17 @@ class Team(BaseModel):
             'country': None,  # 'country_id' => Country
             'name': None,
             'sname': None,
+            'logo_url_low': None,
             'updated': None
         }
 
         for (param, default) in self.param_defaults.items():
             if param == 'updated':
-                setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+                timestamp = kwargs.get(param, default)
+                if (timestamp is not None):
+                    setattr(self, param, datetime.fromtimestamp(timestamp, tz.tzlocal()))
+                else:
+                    setattr(self, param, None)
             else:
                 setattr(self, param, kwargs.get(param, default))
 
@@ -324,9 +341,9 @@ class Match(BaseModel):
         for (param, default) in self.param_defaults.items():
             if param == 'start_date' or param == 'end_date'\
                     or param == 'updated' or param == 'updated_actions' or param == 'updated_events_play':
-
-                if kwargs.get(param, default) is not None:
-                    setattr(self, param, datetime.fromtimestamp(kwargs.get(param, default), tz.tzlocal()))
+                timestamp = kwargs.get(param, default)
+                if (timestamp is not None):
+                    setattr(self, param, datetime.fromtimestamp(timestamp, tz.tzlocal()))
                 else:
                     setattr(self, param, None)
             else:
@@ -352,28 +369,36 @@ class Matches(object):
     """ Wrapper around list of matches to filter the results. """
 
     def __init__(self, matches: [Match]):
-        self.matches = matches
+        self._matches = matches
 
     @property
     def now_playing(self):
-        return list(filter(lambda match: match.playnow is True, self.matches))
+        return list(filter(lambda match: match.playnow is True, self._matches))
 
     @property
     def finished(self):
-        return list(filter(lambda match: match.playnow is False and match.end_date is not None, self.matches))
+        return list(filter(lambda match: match.playnow is False and match.end_date is not None, self._matches))
 
     @property
     def to_be_played(self):
-        return list(filter(lambda match: match.playnow is False and match.end_date is None, self.matches))
+        return list(filter(lambda match: match.playnow is False and
+                                         match.start_date >= datetime.now(tz.tzlocal()) and
+                                         match.end_date is None, self._matches))
+
+    @property
+    def postponed_or_cancelled(self):
+        return list(filter(lambda match: match.playnow is False and
+                                         match.start_date < datetime.now(tz.tzlocal()) and
+                                         match.end_date is None, self._matches))
 
     @property
     def all(self):
-        return self.matches
+        return self._matches
 
     def __str__(self) -> str:
         """ Returns a string representation of model."""
         return "Matches(Total={total})".format(
-            total=len(self.matches))
+            total=len(self._matches))
 
 # # noinspection PyUnresolvedReferences
 # class Teams(BaseModel):
