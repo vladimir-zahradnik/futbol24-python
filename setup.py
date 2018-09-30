@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='futbol24-python',
       version='0.1',
@@ -7,7 +7,7 @@ setup(name='futbol24-python',
       author='Vladimir Zahradnik',
       author_email='vladimir.zahradnik@gmail.com',
       license='Apache License 2.0',
-      packages=['futbol24'],
+      packages=find_packages(),
       install_requires=[
           'requests',
           'lxml'
