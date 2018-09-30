@@ -6,6 +6,8 @@ from typing import Dict
 from urllib.parse import urlparse, urlunparse, urlencode
 
 import requests
+import re
+from lxml import html
 
 from futbol24.models import Country, Competition, League, Team, Match, Matches
 from futbol24.error import Futbol24Error
@@ -182,12 +184,10 @@ class Api(object):
         url = '{base_url}/team/{country}/{team_name}/'.format(base_url='https://www.futbol24.com',
                                                               country=self._replace_characters(team.country.name),
                                                               team_name=self._replace_characters(team.name))
-        #resp = self._request_url(url, 'GET', data=parameters)
-        #data = self._parse_team_info_http_response(resp, self._input_encoding)
+        resp = self._request_url(url, 'GET', data=parameters)
+        data = self._parse_team_info_http_response(resp, self._input_encoding)
 
-        #return data
-
-        return url
+        return data
 
     def get_daily_matches(self) -> Matches:
         # Build request parameters
@@ -464,7 +464,7 @@ class Api(object):
         return match
 
     @staticmethod
-    def _parse_team_info_http_response(response: requests.Response, encoding='utf-8'):
+    def _parse_team_info_http_response(response: requests.Response, encoding='utf-8') -> Dict[str, tuple]:
         """ Parse team info http response returned from Futbol24. It is returned as html which
         needs to be parsed.
         """
@@ -472,9 +472,23 @@ class Api(object):
             raise Futbol24Error({'message': "Error {0} {1}".format(response.status_code, response.reason)})
 
         html_data = response.content.decode(encoding)
-        # TODO: Parse info
+        goal_stats_html = re.search(r'Goals in minutes.+(?P<table><table.+</table>)',
+                              html_data, flags=re.DOTALL | re.MULTILINE)
 
-        return html_data
+        goals_in_minutes = {}
+
+        if goal_stats_html:
+            goal_table=html.fromstring(goal_stats_html.group('table'))
+            goal_table_rows=goal_table.xpath('.//tr')
+
+            for row in goal_table_rows:
+                min_range=row.xpath('./td[contains(@class, "under")]/text()')
+                percent = row.xpath('./td[contains(@class, "percent")]/text()')
+                goals = row.xpath('./td[contains(@class, "bold")]/text()')
+
+                goals_in_minutes[str(min_range[0])]=(str(percent[0]), int(goals[0]))
+
+        return goals_in_minutes
 
     @staticmethod
     def _replace_characters(text: str) -> str:
