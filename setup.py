@@ -10,6 +10,7 @@ setup(name='futbol24-python',
       packages=find_packages(),
       install_requires=[
           'requests',
-          'lxml'
+          'lxml',
+          'dateutils'
       ],
       zip_safe=False)
